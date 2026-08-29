@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const supplyCategories = [
+  {
+    title: "Ferretería Pesada & Elementos de Fijación",
+    description: "Pernos estructurales, varillas roscadas, anclajes químicos y cables de acero.",
+    items: [
+      { name: "Pernos Estructurales Grado 5, 8 y A325", specs: "Acabado Negro / Galvanizado en Caliente", type: "Fijación" },
+      { name: "Cables de Acero y Eslingas de Izaje", specs: "Alma de Acero / Textil con Certificado", type: "Maniobra" },
+      { name: "Discos de Corte y Desbaste Industrial", specs: "4.5\", 7\", 9\" para Acero e Inoxidable", type: "Abrasivos" },
+      { name: "Soldadura y Electrodos Especiales", specs: "E6011, E7018, Inox y Recubrimientos Duros", type: "Soldadura" }
+    ]
+  },
+  {
+    title: "Mobiliario para Campamentos & Oficinas de Obra",
+    description: "Lockers metálicos reforzados, camarotes modulares y escritorios técnicos.",
+    items: [
+      { name: "Lockers Metálicos de 2, 3, 4 y 6 Cuerpos", specs: "Plancha LAF 1/32\" con Portacandado", type: "Almacén" },
+      { name: "Camarotes Metálicos Desarmables de 1.5 Plazas", specs: "Tubo de Acero Reforzado para Campamento", type: "Dormitorio" },
+      { name: "Escritorios Gerenciales y Mesas de Reunión", specs: "Melamina 18mm con Estructura Metálica", type: "Oficina" },
+      { name: "Sillas Ergonómicas y Bancas de Vestuario", specs: "Uso Intensivo de Alto Tránsito", type: "Ergonomía" }
+    ]
+  },
+  {
+    title: "Pinturas Epóxicas, Químicos & Aditivos",
+    description: "Recubrimientos anticorrosivos de alto rendimiento para estructuras y tanques.",
+    items: [
+      { name: "Pinturas Epóxicas y Poliuretano de Alto Sólidos", specs: "Resistencia Química y a la Abrasión", type: "Recubrimientos" },
+      { name: "Grout y Morteros de Nivelación sin Contracción", specs: "Para Anclaje de Maquinaria Pesada", type: "Construcción" },
+      { name: "Desmoldantes y Curadores de Concreto", specs: "Bidón 5 Gal / Cilindro 55 Gal", type: "Químicos" },
+      { name: "Señalética Vial y Fotoluminiscente SST", specs: "Cumplimiento NTP 399.010-1", type: "Señalización" }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Ferretería Industrial, Mobiliario & Suministros | SERVITOTALES S.A.C."
+  description="Abastecimiento corporativo de ferretería pesada, pernos A325, abrasivos, lockers metálicos para campamento y pinturas industriales."
+>
+  <!-- Header -->
+  <section class="relative py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="tech-label">05 // ABASTECIMIENTO INTEGRAL</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
+          Ferretería Industrial & Mobiliario de Obra
+        </h1>
+        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+          Logística ágil y suministro mayorista directo para frentes de trabajo, campamentos mineros e infraestructuras civiles a nivel nacional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supplies Grid -->
+  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      {supplyCategories.map((cat) => (
+        <div class="space-y-8">
+          <div class="border-b border-[var(--border-subtle)] pb-4">
+            <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">{cat.title}</h2>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">{cat.description}</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cat.items.map((item) => (
+              <div class="p-6 rounded-3xl industrial-card flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <span class="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase block">{item.type}</span>
+                  <h3 class="text-base font-bold text-[var(--text-primary)] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{item.name}</h3>
+                  <p class="text-xs text-[var(--text-secondary)] leading-relaxed">{item.specs}</p>
+                </div>
+
+                <div class="pt-6 mt-6 border-t border-[var(--border-subtle)]">
+                  <a
+                    href={`https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%20suministros%3A%20${encodeURIComponent(item.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full py-2.5 px-4 rounded-xl bg-[var(--bg-main)] hover:bg-blue-600 hover:text-white border border-[var(--border-subtle)] hover:border-transparent text-xs font-bold text-center block transition-all shadow-sm"
+                  >
+                    Cotizar Suministro
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

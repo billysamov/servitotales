@@ -1,0 +1,331 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const equipmentLines = [
+  {
+    name: "Excavadoras sobre Orugas (CAT / Komatsu)",
+    tag: "CAT 320/336",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Excavadoras%20sobre%20Orugas%20(CAT%20%2F%20Komatsu)"
+  },
+  {
+    name: "Cargadores Frontales & Retroexcavadoras",
+    tag: "Carga Pesada",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Cargadores%20Frontales%20%26%20Retroexcavadoras"
+  },
+  {
+    name: "Volquetes y Camiones Grúa / Plataforma",
+    tag: "Acarreo en Mina",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Volquetes%20y%20Camiones%20Gr%C3%BAa%20%2F%20Plataforma"
+  },
+  {
+    name: "Manipuladores Telescópicos (Telehandlers)",
+    tag: "Izaje Versátil",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Manipuladores%20Telesc%C3%B3picos%20(Telehandlers)"
+  },
+  {
+    name: "Rodillos Compactadores y Minicargadores",
+    tag: "Obras Viales",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Rodillos%20Compactadores%20y%20Minicargadores"
+  },
+  {
+    name: "Grupos Electrógenos & Torres de Iluminación",
+    tag: "Energía 24/7",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Grupos%20Electr%C3%B3genos%20%26%20Torres%20de%20Iluminaci%C3%B3n"
+  }
+];
+
+const marqueeItems = [
+  "SGC ISO 9001:2015 CERTIFICADO",
+  "ALQUILER DE MAQUINARIA PESADA",
+  "OPERADORES Y TÉCNICOS HOMOLOGADOS",
+  "ENTREGA DIRECTA EN OBRA A NIVEL NACIONAL",
+  "EQUIPOS DE PROTECCIÓN PERSONAL ANSI/OSHA",
+  "MANTENIMIENTO TÉCNICO ESPECIALIZADO 24/7",
+  "SUMINISTROS CORPORATIVOS Y MINERÍA"
+];
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section id="inicio" class="relative min-h-[92vh] flex flex-col justify-center pt-16 pb-20 lg:pt-20 lg:pb-28 border-b border-[var(--border-subtle)] overflow-hidden">
+    <!-- Directional Gradient Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-br from-red-600/5 via-transparent to-blue-600/5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <!-- Left Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="tech-label">SGC ISO 9001:2015 CERTIFICADO • MINERÍA Y CONSTRUCCIÓN</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-[var(--text-primary)] leading-[1.08] font-heading">
+            Potenciamos tus Proyectos con <br class="hidden sm:inline" />
+            <span class="text-gradient-red">Maquinaria Pesada, EPP y Suministros Industriales</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed max-w-2xl font-semibold">
+            Aliado estratégico clave para construcción, minería superficial y subterránea, obras viales e industria a nivel nacional. Disponibilidad inmediata, operadores homologados y entrega directa en obra.
+          </p>
+
+          <!-- Technical Guarantees Matrix -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 py-2">
+            <div class="p-3.5 rounded-2xl bg-[var(--bg-surface)]/95 backdrop-blur-md border border-[var(--border-subtle)] flex items-start gap-3 shadow-md">
+              <div class="w-6 h-6 rounded-lg bg-red-500/10 text-[#DC2626] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase text-[var(--text-muted)] block">Modalidad de Alquiler</span>
+                <span class="text-xs font-bold text-[var(--text-primary)]">Con Operador Homologado o Equipo Seco</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-[var(--bg-surface)]/95 backdrop-blur-md border border-[var(--border-subtle)] flex items-start gap-3 shadow-md">
+              <div class="w-6 h-6 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase text-[var(--text-muted)] block">Soporte y Mantenimiento</span>
+                <span class="text-xs font-bold text-[var(--text-primary)]">Asistencia Mecánica en Sitio 24/7</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-[var(--bg-surface)]/95 backdrop-blur-md border border-[var(--border-subtle)] flex items-start gap-3 shadow-md">
+              <div class="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase text-[var(--text-muted)] block">Seguridad y Normativa</span>
+                <span class="text-xs font-bold text-[var(--text-primary)]">Checklist Diario y Homologación SST</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-[var(--bg-surface)]/95 backdrop-blur-md border border-[var(--border-subtle)] flex items-start gap-3 shadow-md">
+              <div class="w-6 h-6 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase text-[var(--text-muted)] block">Logística de Despacho</span>
+                <span class="text-xs font-bold text-[var(--text-primary)]">Entrega Directa con Cama Baja en Obra</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a
+              href="/contacto"
+              class="px-8 py-4 text-xs font-black uppercase tracking-widest text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-lg shadow-red-950/20 dark:shadow-red-950/60 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 cursor-pointer"
+            >
+              <span>Solicitar Cotización Inmediata</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <a
+              href="/maquinaria"
+              class="px-8 py-4 text-xs font-black uppercase tracking-widest text-[var(--text-primary)] bg-[var(--bg-surface)] hover:bg-[var(--bg-card)] border border-[var(--border-strong)] rounded-xl transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-sm"
+            >
+              <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+              </svg>
+              <span>Ver Catálogo de Maquinaria</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Quick Fleet Availability Panel -->
+        <div class="lg:col-span-5 flex flex-col">
+          <div class="relative rounded-3xl overflow-hidden border border-[var(--border-strong)] shadow-2xl bg-[var(--bg-surface)]/95 dark:bg-[var(--bg-surface)]/90 backdrop-blur-xl p-6 sm:p-8">
+            <div class="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)]">
+              <div>
+                <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-amber-500 block">Brochure Técnico Oficial</span>
+                <h3 class="text-base sm:text-lg font-black font-heading text-[var(--text-primary)]">Disponibilidad de Flota</h3>
+              </div>
+              <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[11px] font-bold">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>En Servicio Activo</span>
+              </div>
+            </div>
+
+            <div class="py-5 space-y-2">
+              <span class="text-[11px] font-mono text-[var(--text-muted)] uppercase tracking-wider block mb-2 font-bold">
+                Seleccionar Línea para Cotización Inmediata:
+              </span>
+              <div class="space-y-2">
+                {equipmentLines.map((item) => (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-between p-3 rounded-xl bg-[var(--bg-main)] hover:bg-[#DC2626] hover:text-white border border-[var(--border-subtle)] hover:border-transparent transition-all text-xs font-bold text-[var(--text-primary)] group shadow-sm"
+                  >
+                    <span class="flex items-center gap-2.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#DC2626] group-hover:bg-white transition-colors"></span>
+                      <span>{item.name}</span>
+                    </span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[10px] font-mono text-[var(--text-muted)] group-hover:text-white/80 hidden sm:inline">{item.tag}</span>
+                      <svg class="w-3.5 h-3.5 text-[var(--text-muted)] group-hover:text-white group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <span class="text-amber-500 font-bold font-mono">ISO 9001:2015</span>
+                <span class="text-[var(--text-muted)]">•</span>
+                <span class="text-[var(--text-secondary)] font-medium">Atención 24/7</span>
+              </div>
+              <a href="tel:963895085" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 font-mono">
+                <span>+51 963 895 085</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Performance Metrics Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-14 pt-10 border-t border-[var(--border-subtle)]">
+        <div class="p-6 rounded-2xl industrial-card group">
+          <div class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#DC2626] transition-colors">ISO 9001</div>
+          <div class="text-xs sm:text-sm font-bold text-[var(--text-primary)] mt-1.5">Certificación SGC</div>
+          <div class="text-[11px] text-[var(--text-muted)] mt-0.5">Estándar internacional 2015</div>
+        </div>
+        <div class="p-6 rounded-2xl industrial-card group">
+          <div class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#DC2626] transition-colors">100%</div>
+          <div class="text-xs sm:text-sm font-bold text-[var(--text-primary)] mt-1.5">Cobertura Nacional</div>
+          <div class="text-[11px] text-[var(--text-muted)] mt-0.5">Entrega directa en obra</div>
+        </div>
+        <div class="p-6 rounded-2xl industrial-card group">
+          <div class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#DC2626] transition-colors">24/7</div>
+          <div class="text-xs sm:text-sm font-bold text-[var(--text-primary)] mt-1.5">Soporte Mecánico</div>
+          <div class="text-[11px] text-[var(--text-muted)] mt-0.5">Mantenimiento en sitio</div>
+        </div>
+        <div class="p-6 rounded-2xl industrial-card group">
+          <div class="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#DC2626] transition-colors">2030</div>
+          <div class="text-xs sm:text-sm font-bold text-[var(--text-primary)] mt-1.5">Visión de Liderazgo</div>
+          <div class="text-[11px] text-[var(--text-muted)] mt-0.5">Excelencia e innovación</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kinetic Marquee Ticker -->
+  <section class="py-5 bg-[var(--bg-surface)] border-b border-[var(--border-subtle)] overflow-hidden relative">
+    <div class="marquee-track flex items-center gap-12 whitespace-nowrap">
+      {[...marqueeItems, ...marqueeItems].map((item) => (
+        <div class="flex items-center gap-12 flex-shrink-0">
+          <span class="text-xs sm:text-sm font-black tracking-widest text-[var(--text-primary)] uppercase flex items-center gap-3 font-heading">
+            <span class="w-2 h-2 rounded-full bg-[#DC2626]"></span>
+            <span>{item}</span>
+          </span>
+          <span class="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest">// SERVITOTALES</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Business Divisions Portal Grid -->
+  <section class="py-24 lg:py-36 relative border-b border-[var(--border-subtle)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16 space-y-4">
+        <span class="tech-label">01 // DIVISIONES OPERATIVAS & SGC ISO 9001</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--text-primary)] leading-tight font-heading">
+          Soluciones Integrales para Minería, Construcción e Industria
+        </h2>
+        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+          Explora nuestras unidades de negocio homologadas para proyectos en costa, sierra y selva con despacho directo en obra.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="p-8 sm:p-10 rounded-3xl industrial-card flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-[#DC2626] mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <span class="text-xs font-mono font-bold text-[#DC2626] uppercase">División Maquinaria</span>
+            <h3 class="text-2xl font-black text-[var(--text-primary)] mt-1 mb-3 font-heading group-hover:text-[#DC2626] transition-colors">
+              Maquinaria Pesada & Minería
+            </h3>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+              Excavadoras, cargadores, volquetes, telehandlers y sistemas para minería subterránea trackless (Jumbos y Scooptrams).
+            </p>
+          </div>
+          <div class="pt-6 border-t border-[var(--border-subtle)]">
+            <a href="/maquinaria" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#DC2626] group-hover:translate-x-1 transition-all">
+              <span>Ver Catálogo de Flota</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-8 sm:p-10 rounded-3xl industrial-card flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <span class="text-xs font-mono font-bold text-amber-500 uppercase">Seguridad Industrial</span>
+            <h3 class="text-2xl font-black text-[var(--text-primary)] mt-1 mb-3 font-heading group-hover:text-amber-500 transition-colors">
+              Equipos de Protección (EPP)
+            </h3>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+              Cascos, respiradores Full Face con filtros P100, arneses anticaídas, trajes Tyvek y ropa ignífuga homologada.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-[var(--border-subtle)]">
+            <a href="/epp" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-500 group-hover:translate-x-1 transition-all">
+              <span>Ver Catálogo de EPP</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-8 sm:p-10 rounded-3xl industrial-card flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-blue-600/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase">Ferretería & Mobiliario</span>
+            <h3 class="text-2xl font-black text-[var(--text-primary)] mt-1 mb-3 font-heading group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              Ferretería & Suministros
+            </h3>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+              Herramientas, pernos de alta resistencia, abrasivos, pinturas epóxicas, mobiliario de campamento y lockers metálicos.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-[var(--border-subtle)]">
+            <a href="/suministros" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-all">
+              <span>Ver Suministros</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

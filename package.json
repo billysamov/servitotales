@@ -1,0 +1,21 @@
+{
+  "name": "servitotales",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Sitio web corporativo de SERVITOTALES S.A.C. - Maquinaria Pesada, Mineria Trackless, EPP y Suministros Industriales",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^8.2.8",
+    "astro": "^5.4.2",
+    "gsap": "^3.12.7",
+    "lucide-astro": "^0.501.0",
+    "tailwindcss": "^3.4.17"
+  }
+}

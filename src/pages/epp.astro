@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const eppCategories = [
+  {
+    title: "Protección Respiratoria Normada",
+    description: "Sistemas para material particulado, polvos en suspensión, vapores orgánicos y gases en mina.",
+    items: [
+      { name: "Respiradores de Medio Rostro Serie 6200 / 7500", standard: "NIOSH / OSHA", brand: "3M / MSA" },
+      { name: "Respiradores Full Face Rostro Completo", standard: "Protección Ocular + Respiratoria", brand: "3M / Moldex" },
+      { name: "Filtros y Cartuchos P100 para Minería", standard: "Retención 99.97% Partículas", brand: "3M 2097 / 7093" },
+      { name: "Mascarillas Descartables N95 / KN95", standard: "Caja x 20 / 50 uds", brand: "Certificación ANSI" }
+    ]
+  },
+  {
+    title: "Protección para Trabajos en Altura",
+    description: "Equipos certificados para anclaje seguro, detención de caídas y rescate industrial.",
+    items: [
+      { name: "Arnés de Cuerpo Entero de 4 Anillos", standard: "ANSI Z359.11 / OSHA", brand: "Capital Safety / MSA" },
+      { name: "Líneas de Vida con Doble Mosquetón y Absorbente", standard: "Capacidad 140 kg", brand: "3M DBI-SALA" },
+      { name: "Líneas de Vida Retráctiles (Block Anticaídas)", standard: "Longitudes: 6m, 10m, 15m", brand: "Miller / 3M" },
+      { name: "Freno para Cuerda y Puntos de Anclaje Móviles", standard: "Acero Inoxidable / Forjado", brand: "Petzl / MSA" }
+    ]
+  },
+  {
+    title: "Protección de Cabeza, Ocular y Auditiva",
+    description: "Cascos dieléctricos, lentes antiempañantes y protectores auditivos copa/tapón.",
+    items: [
+      { name: "Cascos de Seguridad Dieléctricos Tipo I y II", standard: "ANSI Z89.1 Clase E & G", brand: "MSA V-Gard / 3M" },
+      { name: "Lentes de Seguridad con Protección UV y Antirrayas", standard: "ANSI Z87.1+", brand: "Nemesis / 3M" },
+      { name: "Protectores Auditivos Tipo Copa para Casco", standard: "NRR 26 a 31 dB", brand: "Peltor / Howard Leight" },
+      { name: "Barboquejos Elásticos con Mentonera", standard: "3 y 4 Puntos de Sujeción", brand: "Servitotales Safety" }
+    ]
+  },
+  {
+    title: "Indumentaria Especial & Ropa Ignífuga",
+    description: "Trajes de protección química, térmicos para altura y uniformes de alta visibilidad.",
+    items: [
+      { name: "Mamelucos y Uniformes con Cintas Reflectivas 3M", standard: "Tela Drill / Taslan Térmico", brand: "Confección Minera" },
+      { name: "Trajes de Protección Química Tyvek / Tychem", standard: "Micropartículas y Líquidos", brand: "DuPont" },
+      { name: "Ropa Ignífuga para Soldadura y Oxicorte", standard: "NFPA 2112 / NFPA 70E", brand: "Westex / Weldas" },
+      { name: "Calzado de Seguridad con Puntera Composite / Acero", standard: "ASTM F2413 / Dieléctrico", brand: "Bata / Caterpillar" }
+    ]
+  }
+];
+---
+
+<Layout
+  title="EPP & Equipos de Protección Personal | SERVITOTALES S.A.C."
+  description="Distribución mayorista de EPP certificado para minería y construcción. Respiradores 3M P100, arneses, cascos, trajes Tyvek y botas dieléctricas."
+>
+  <!-- Header -->
+  <section class="relative py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="tech-label">04 // SEGURIDAD INDUSTRIAL & SST</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
+          Equipos de Protección Personal (EPP)
+        </h1>
+        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+          Suministro homologado por lote para faenas mineras, industrias químicas y obras civiles. Certificación ANSI, NIOSH, OSHA y fichas técnicas aprobadas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EPP Grid -->
+  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      {eppCategories.map((cat) => (
+        <div class="space-y-8">
+          <div class="border-b border-[var(--border-subtle)] pb-4">
+            <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">{cat.title}</h2>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">{cat.description}</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cat.items.map((item) => (
+              <div class="p-6 rounded-3xl industrial-card flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <span class="text-[10px] font-mono font-bold text-amber-500 uppercase block">{item.brand}</span>
+                  <h3 class="text-base font-bold text-[var(--text-primary)] group-hover:text-amber-500 transition-colors">{item.name}</h3>
+                  <p class="text-xs text-[var(--text-secondary)] leading-relaxed">{item.standard}</p>
+                </div>
+
+                <div class="pt-6 mt-6 border-t border-[var(--border-subtle)]">
+                  <a
+                    href={`https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%20lote%20de%20EPP%3A%20${encodeURIComponent(item.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full py-2.5 px-4 rounded-xl bg-[var(--bg-main)] hover:bg-amber-500 hover:text-white border border-[var(--border-subtle)] hover:border-transparent text-xs font-bold text-center block transition-all shadow-sm"
+                  >
+                    Cotizar por Lote
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

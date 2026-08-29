@@ -1,0 +1,92 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "SERVITOTALES S.A.C. | Maquinaria Pesada, Minería Trackless, EPP y Suministros - ISO 9001",
+  description = "Venta y alquiler de maquinaria pesada, minería subterránea trackless, EPP normado, ferretería y suministros industriales a nivel nacional. Calidad ISO 9001:2015."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, "https://www.servitotales.com");
+---
+
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Theme State Initializer (Prevents FOUC) -->
+    <script is:inline>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="alquiler de maquinaria pesada peru, jumbos perforacion, scooptrams, mineria subterranea trackless, epp certificado, ferreteria industrial, servitotales iso 9001" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="SERVITOTALES" />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Corporation",
+        "name": "SERVITOTALES",
+        "alternateName": "Servitotales SAC",
+        "url": "https://www.servitotales.com",
+        "logo": "https://www.servitotales.com/favicon.svg",
+        "description": "Venta y alquiler de maquinaria pesada, minería subterránea trackless, EPP normado, ferretería y suministros industriales a nivel nacional. Calidad ISO 9001:2015.",
+        "telephone": "+51 963 895 085",
+        "email": "contacto@servitotales.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PE",
+          "addressLocality": "Lima",
+          "streetAddress": "Cobertura y Entrega Directa en Obra a Nivel Nacional"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "ISO 9001:2015",
+            "credentialCategory": "Quality Management System Certification",
+            "description": "Sistema de Gestion de la Calidad respaldado por la certificacion internacional ISO 9001:2015"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[var(--bg-main)] text-[var(--text-primary)] antialiased selection:bg-[#DC2626] selection:text-white min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppFloat />
+  </body>
+</html>

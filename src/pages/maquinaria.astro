@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const machineryCategories = [
+  {
+    id: "movimiento-tierras",
+    title: "Movimiento de Tierras & Excavación",
+    description: "Equipos pesados para obras civiles de gran envergadura, apertura de vías y canteras.",
+    items: [
+      { name: "Excavadora sobre Orugas CAT 320 / 336", specs: "Peso: 22-38 Tn • Cuchara: 1.2 - 2.5 m³", brand: "Caterpillar / Komatsu" },
+      { name: "Cargador Frontal CAT 950 / 966", specs: "Capacidad: 3.5 - 5.0 m³ • Potencia: 230-300 HP", brand: "Caterpillar / Volvo" },
+      { name: "Tractor sobre Orugas D6T / D8T", specs: "Hoja Semi-Universal • Ripper Multivástago", brand: "Caterpillar" },
+      { name: "Motoniveladora CAT 140M / 160M", specs: "Vertedera: 14 pies • Tracción Tandem", brand: "Caterpillar" }
+    ]
+  },
+  {
+    id: "mineria-subterranea-trackless",
+    title: "Minería Subterránea Trackless",
+    description: "Sistemas especializados de perforación, acarreo y sostenimiento en túneles y labores mineras.",
+    items: [
+      { name: "Jumbo Electrohidráulico de Perforación", specs: "1 y 2 Brazos • Cobertura: 35-65 m²", brand: "Sandvik / Epiroc" },
+      { name: "Scooptram (LHD Subterráneo)", specs: "Capacidad: 3.5 a 7.0 yd³ • Motor Diesel / Eléctrico", brand: "Sandvik / Epiroc" },
+      { name: "Dumper Subterráneo para Mina", specs: "Capacidad de Carga: 20 a 35 Tn", brand: "Epiroc / Sandvik" },
+      { name: "Roboshot para Proyección de Shotcrete", specs: "Brazo Telescópico 10m • Compresor Integrado", brand: "Putzmeister / Normet" }
+    ]
+  },
+  {
+    id: "elevacion-carga",
+    title: "Elevación, Izaje & Maniobras",
+    description: "Manipuladores versátiles y grúas para montaje electromecánico y logística de campamento.",
+    items: [
+      { name: "Manipulador Telescópico (Telehandler)", specs: "Alcance: 14 - 17 m • Capacidad: 4.0 - 5.0 Tn", brand: "JCB / Manitou / CAT" },
+      { name: "Camión Grúa Articulado", specs: "Capacidad: 10 a 25 Tn • Pluma Telescópica", brand: "Palfinger / Hiab / Fassi" },
+      { name: "Manlift / Plataforma Tijera Articulada", specs: "Altura de Trabajo: 12 a 26 m", brand: "Genie / JLG" }
+    ]
+  },
+  {
+    id: "vial-compactacion",
+    title: "Maquinaria Vial & Compactación",
+    description: "Equipos para conformación de terraplenes, bases granulares y pavimentación.",
+    items: [
+      { name: "Rodillo Compactador Liso / Pata de Cabra", specs: "Peso Operativo: 10 - 14 Tn", brand: "Hamm / CAT / Bomag" },
+      { name: "Camión Cisterna de Agua 5,000 Galones", specs: "Bomba de Descarga y Regadera Posterior", brand: "Mercedes-Benz / Volvo" },
+      { name: "Minicargador con Accesorios", specs: "Brazo Excavador, Martillo Hidráulico, Barredora", brand: "Bobcat / CAT" }
+    ]
+  },
+  {
+    id: "generacion-electrica",
+    title: "Generación de Energía & Iluminación",
+    description: "Grupos electrógenos insonorizados y torres autónomas para faenas 24/7.",
+    items: [
+      { name: "Grupo Electrógeno Insonorizado", specs: "Potencia: 50 a 500 kVA • 60 Hz Trifásico", brand: "Cummins / Perkins / CAT" },
+      { name: "Torre de Iluminación LED Móvil", specs: "4x350W LED • Mástil Telescópico 9m", brand: "Generac / Doosan" },
+      { name: "Compresor de Aire Portátil para Obra", specs: "Caudal: 185 a 750 CFM • Presión: 100-150 PSI", brand: "Atlas Copco / Sullair" }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Catálogo de Maquinaria Pesada & Minería | SERVITOTALES S.A.C."
+  description="Alquiler y venta de maquinaria pesada, excavadoras, cargadores, volquetes y equipos para minería subterránea trackless. Disponibilidad inmediata con entrega en obra."
+>
+  <!-- Header -->
+  <section class="relative py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="tech-label">03 // CATÁLOGO DE FLOTA OPERATIVA</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
+          Maquinaria Pesada & Minería Subterránea
+        </h1>
+        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+          Flota moderna en excelentes condiciones mecánicas, con checklist diario, planes de mantenimiento preventivo y operadores homologados para faenas de alta exigencia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      {machineryCategories.map((cat) => (
+        <div id={cat.id} class="space-y-8 scroll-mt-28">
+          <div class="border-b border-[var(--border-subtle)] pb-4">
+            <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">{cat.title}</h2>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">{cat.description}</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cat.items.map((item) => (
+              <div class="p-6 rounded-3xl industrial-card flex flex-col justify-between group">
+                <div class="space-y-3">
+                  <span class="text-[10px] font-mono font-bold text-[#DC2626] uppercase block">{item.brand}</span>
+                  <h3 class="text-base font-bold text-[var(--text-primary)] group-hover:text-[#DC2626] transition-colors">{item.name}</h3>
+                  <p class="text-xs text-[var(--text-secondary)] leading-relaxed">{item.specs}</p>
+                </div>
+
+                <div class="pt-6 mt-6 border-t border-[var(--border-subtle)]">
+                  <a
+                    href={`https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20${encodeURIComponent(item.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full py-2.5 px-4 rounded-xl bg-[var(--bg-main)] hover:bg-[#DC2626] hover:text-white border border-[var(--border-subtle)] hover:border-transparent text-xs font-bold text-center block transition-all shadow-sm"
+                  >
+                    Cotizar Disponibilidad
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

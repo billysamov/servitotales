@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Acceso Institucional | SERVITOTALES S.A.C."
+  description="Panel de acceso para colaboradores, clientes corporativos y fiscalización de telemetría de flota."
+>
+  <section class="min-h-[80vh] flex items-center justify-center py-20 px-4">
+    <div class="w-full max-w-md p-8 sm:p-10 rounded-3xl industrial-card shadow-2xl space-y-6">
+      <div class="text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-red-500/10 text-[#DC2626] flex items-center justify-center mx-auto mb-4 border border-red-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+        </div>
+        <h1 class="text-2xl font-black text-[var(--text-primary)] font-heading">Portal Institucional</h1>
+        <p class="text-xs text-[var(--text-secondary)]">Acceso a telemetría de flota, control de contratos y certificaciones SST.</p>
+      </div>
+
+      <form class="space-y-4" onsubmit="event.preventDefault(); alert('Acceso restringido a personal autorizado de Servitotales.');">
+        <div>
+          <label for="email" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider mb-2">Usuario / Correo Corporativo</label>
+          <input type="email" id="email" required placeholder="usuario@servitotales.com" class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]" />
+        </div>
+
+        <div>
+          <label for="password" class="block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider mb-2">Contraseña de Seguridad</label>
+          <input type="password" id="password" required placeholder="••••••••••••" class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[#DC2626]" />
+        </div>
+
+        <button type="submit" class="w-full py-3.5 text-xs font-black uppercase tracking-widest text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-2xl shadow-lg transition-all">
+          Iniciar Sesión
+        </button>
+      </form>
+
+      <div class="pt-4 border-t border-[var(--border-subtle)] text-center">
+        <a href="/" class="text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] font-bold transition">? Volver al Portal Principal</a>
+      </div>
+    </div>
+  </section>
+</Layout>
