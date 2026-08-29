@@ -1,4 +1,4 @@
-﻿---
+---
 import ThemeToggle from './ThemeToggle.astro';
 
 const pathname = Astro.url.pathname;
@@ -32,9 +32,15 @@ const catalogSubItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-[#060B14]/95 text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800/90 backdrop-blur-md shadow-sm dark:shadow-xl transition-colors duration-300">
+<header
+  id="main-header"
+  class="sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-md select-none header-at-top"
+>
   <!-- Top Utility Bar (Docked) -->
-  <div class="hidden md:block bg-[#050B16] text-slate-300 text-[11px] font-semibold border-b border-slate-800/80 py-1.5 px-4 sm:px-6 lg:px-8">
+  <div
+    id="top-utility-bar"
+    class="hidden md:block bg-[#050B16] text-slate-300 text-[11px] font-semibold border-b border-slate-800/80 py-1.5 px-4 sm:px-6 lg:px-8 transition-colors duration-300"
+  >
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Left: ISO Stamp & Operational Status -->
       <div class="flex items-center gap-4 sm:gap-6">
@@ -78,24 +84,24 @@ const catalogSubItems = [
           </svg>
         </div>
         <div class="flex flex-col">
-          <span class="text-xl sm:text-2xl font-black tracking-wider text-slate-900 dark:text-white font-heading leading-tight">
+          <span id="nav-brand-text" class="text-xl sm:text-2xl font-black tracking-wider text-white font-heading leading-tight transition-colors">
             SERVI<span class="text-[#DC2626]">TOTALES</span>
           </span>
-          <span class="text-[8px] sm:text-[9px] tracking-widest uppercase font-bold text-blue-600 dark:text-blue-400 whitespace-nowrap">
+          <span class="text-[8px] sm:text-[9px] tracking-widest uppercase font-bold text-blue-400 whitespace-nowrap">
             Maquinaria • Minería • EPP • Suministros
           </span>
         </div>
       </a>
 
-      <!-- Center: Main Navigation Menu (Centered with Submenu Dropdown) -->
-      <nav class="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-6 xl:gap-9 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+      <!-- Center: Main Navigation Menu -->
+      <nav id="nav-links-container" class="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-6 xl:gap-9 text-xs font-bold uppercase tracking-wider text-slate-300">
         <!-- 1. Inicio -->
         <a
           href="/"
           class={`py-2 relative whitespace-nowrap transition-colors ${
             isActive('/')
               ? 'text-[#DC2626] font-black'
-              : 'hover:text-[#DC2626] dark:hover:text-white'
+              : 'nav-link-item hover:text-[#DC2626]'
           }`}
         >
           <span>Inicio</span>
@@ -110,7 +116,7 @@ const catalogSubItems = [
           class={`py-2 relative whitespace-nowrap transition-colors ${
             isActive('/nosotros')
               ? 'text-[#DC2626] font-black'
-              : 'hover:text-[#DC2626] dark:hover:text-white'
+              : 'nav-link-item hover:text-[#DC2626]'
           }`}
         >
           <span>Nosotros & ISO 9001</span>
@@ -119,14 +125,14 @@ const catalogSubItems = [
           )}
         </a>
 
-        <!-- 3. Catálogo & Divisiones (Dropdown Unificado) -->
+        <!-- 3. Catálogo & Divisiones -->
         <div class="relative group py-2">
           <button
             type="button"
             class={`flex items-center gap-1.5 relative whitespace-nowrap transition-colors cursor-pointer ${
               isCatalogActive
                 ? 'text-[#DC2626] font-black'
-                : 'hover:text-[#DC2626] dark:hover:text-white'
+                : 'nav-link-item hover:text-[#DC2626]'
             }`}
           >
             <span>Catálogo & Divisiones</span>
@@ -173,7 +179,7 @@ const catalogSubItems = [
           class={`py-2 relative whitespace-nowrap transition-colors ${
             isActive('/contacto')
               ? 'text-[#DC2626] font-black'
-              : 'hover:text-[#DC2626] dark:hover:text-white'
+              : 'nav-link-item hover:text-[#DC2626]'
           }`}
         >
           <span>Contacto</span>
@@ -183,7 +189,7 @@ const catalogSubItems = [
         </a>
       </nav>
 
-      <!-- Right Controls: Light/Dark Toggle + Primary CTA -->
+      <!-- Right Controls -->
       <div class="flex items-center gap-3 shrink-0">
         <ThemeToggle />
 
@@ -195,11 +201,11 @@ const catalogSubItems = [
           Cotizar
         </a>
 
-        <!-- Mobile Menu Toggle (Visible below lg) -->
+        <!-- Mobile Menu Toggle -->
         <button
           type="button"
           id="mobile-menu-btn"
-          class="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1528] text-slate-800 dark:text-slate-200 hover:border-[#DC2626] transition-colors"
+          class="lg:hidden p-2.5 rounded-xl border border-slate-800 bg-[#0B1528] text-slate-200 hover:border-[#DC2626] transition-colors"
           aria-label="Abrir Menú"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -239,10 +245,61 @@ const catalogSubItems = [
   </div>
 </header>
 
+<style>
+  .header-at-top {
+    background-color: rgba(6, 11, 20, 0.95);
+    border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+  }
+
+  :global(html:not(.dark)) .header-scrolled {
+    background-color: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(226, 232, 240, 1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  }
+
+  :global(html:not(.dark)) .header-scrolled #nav-brand-text {
+    color: #0f172a !important;
+  }
+
+  :global(html:not(.dark)) .header-scrolled #nav-links-container {
+    color: #334155 !important;
+  }
+
+  :global(html:not(.dark)) .header-scrolled .nav-link-item {
+    color: #334155 !important;
+  }
+
+  :global(html:not(.dark)) .header-scrolled .nav-link-item:hover {
+    color: #dc2626 !important;
+  }
+
+  :global(html.dark) .header-scrolled {
+    background-color: rgba(6, 11, 20, 0.97);
+    border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
 <script>
+  const header = document.getElementById('main-header');
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+
   mobileBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
   });
+
+  function handleHeaderScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    if (scrollY > 50) {
+      header?.classList.remove('header-at-top');
+      header?.classList.add('header-scrolled');
+    } else {
+      header?.classList.add('header-at-top');
+      header?.classList.remove('header-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+  handleHeaderScroll();
 </script>
