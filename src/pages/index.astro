@@ -37,7 +37,6 @@ const divisions = [
   {
     title: "Maquinaria Pesada & Minería",
     tag: "División Maquinaria",
-    tagColor: "text-[#DC2626] bg-red-500/10 border-red-500/20",
     desc: "Excavadoras, cargadores frontales, volquetes, telehandlers y sistemas para minería subterránea trackless (Jumbos y Scooptrams).",
     href: "/maquinaria",
     cta: "Ver Catálogo de Flota",
@@ -47,7 +46,6 @@ const divisions = [
   {
     title: "Equipos de Protección (EPP)",
     tag: "Seguridad Industrial",
-    tagColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
     desc: "Cascos dieléctricos, respiradores con filtros P100, arneses anticaídas, trajes Tyvek y ropa ignífuga homologada ANSI/OSHA.",
     href: "/epp",
     cta: "Ver Catálogo de EPP",
@@ -57,7 +55,6 @@ const divisions = [
   {
     title: "Ferretería & Suministros",
     tag: "Ferretería & Mobiliario",
-    tagColor: "text-blue-500 bg-blue-500/10 border-blue-500/20",
     desc: "Herramientas de alto torque, pernos estructurales A325, abrasivos, pinturas epóxicas y mobiliario reforzado para campamento.",
     href: "/suministros",
     cta: "Ver Catálogo de Suministros",
@@ -94,7 +91,7 @@ const divisions = [
             <span>SGC ISO 9001:2015 • MINERÍA & CONSTRUCCIÓN</span>
           </div>
 
-          <!-- Main Headline (Punchy & Direct) -->
+          <!-- Main Headline -->
           <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-black tracking-tight text-white leading-[1.1] font-heading">
             Potenciamos tus Proyectos con <br class="hidden sm:inline" />
             <span class="text-gradient-red">Maquinaria Pesada & EPP</span>
@@ -105,7 +102,7 @@ const divisions = [
             Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.
           </p>
 
-          <!-- Core Benefits (Minimalist horizontal pill list) -->
+          <!-- Core Benefits -->
           <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-slate-300 font-semibold pt-1">
             <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center gap-1.5">
               <span class="text-emerald-400">✓</span> Operadores Homologados
@@ -153,7 +150,7 @@ const divisions = [
               </div>
             </div>
 
-            <!-- Streamlined Selector (4 Core Categories) -->
+            <!-- Streamlined Selector -->
             <div class="space-y-2">
               {equipmentLines.map((item) => (
                 <a
@@ -224,7 +221,7 @@ const divisions = [
     </div>
   </section>
 
-  <!-- Business Divisions Portal Grid (Featured with Real Photography & Linked Directly) -->
+  <!-- Business Divisions Portal Grid (Clean, Direct, 100% Crisp Images Without White Layers) -->
   <section class="py-20 lg:py-28 relative border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mb-14 space-y-3">
@@ -239,21 +236,20 @@ const divisions = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {divisions.map((div) => (
-          <div class="rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group shadow-lg hover:shadow-2xl transition-all duration-300">
-            <!-- Card Image Banner with Hover Zoom -->
-            <div class="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-900">
+          <div class="rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group shadow-lg hover:shadow-2xl transition-all duration-300 bg-[var(--bg-surface)] border border-[var(--border-subtle)]">
+            <!-- 100% Crisp Image Header (No White Gradient Layer) -->
+            <div class="relative h-56 sm:h-60 w-full overflow-hidden bg-slate-900 border-b border-[var(--border-subtle)]">
               <img
                 src={div.img}
                 alt={div.alt}
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-surface)] via-transparent to-black/30"></div>
               
-              <!-- Floating Category Badge on Image -->
-              <div class="absolute top-4 left-4">
-                <span class={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider backdrop-blur-md border ${div.tagColor}`}>
+              <!-- Floating Crisp Category Pill -->
+              <div class="absolute top-3.5 left-3.5 z-10">
+                <span class="inline-flex items-center px-3 py-1.5 rounded-xl text-[11px] font-mono font-bold uppercase tracking-wider bg-[#060B14]/90 text-white border border-slate-700 shadow-md backdrop-blur-md">
                   {div.tag}
                 </span>
               </div>
