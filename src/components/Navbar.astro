@@ -21,7 +21,7 @@ const navLinks = [
 <header class="sticky top-0 z-50 w-full bg-[var(--bg-surface)]/95 backdrop-blur-md border-b border-[var(--border-subtle)] transition-colors duration-300">
   <!-- Top Utility Bar (Docked) -->
   <div class="hidden md:block bg-[#050B16] text-slate-300 text-[11px] font-semibold border-b border-slate-800/80 py-1.5 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between">
       <!-- Left: ISO Stamp & Operational Status -->
       <div class="flex items-center gap-4 sm:gap-6">
         <div class="flex items-center gap-2 text-amber-400">
@@ -52,9 +52,9 @@ const navLinks = [
   </div>
 
   <!-- Main Navigation Row -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20 gap-4">
-      <!-- Brand Logo -->
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Left: Brand Logo -->
       <a href="/" class="flex items-center gap-3 shrink-0 group">
         <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0B2545] to-[#040A14] dark:from-blue-600 dark:to-[#07172C] p-2 flex items-center justify-center border border-blue-500/40 shadow-md group-hover:scale-105 transition-transform">
           <svg viewBox="0 0 40 40" class="w-full h-full" fill="none">
@@ -73,42 +73,20 @@ const navLinks = [
         </div>
       </a>
 
-      <!-- Desktop Navigation Links (Clean Single-Line with whitespace-nowrap) -->
-      <nav class="hidden xl:flex items-center gap-5 2xl:gap-7 text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)] shrink-0">
+      <!-- Center: Main Navigation Menu (Centered & Strict Single-Line) -->
+      <nav class="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-10 gap-4 xl:gap-8 text-[11px] xl:text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
         {navLinks.map((link) => {
           const active = isActive(link.href);
           return (
             <a
               href={link.href}
-              class={`py-1.5 relative whitespace-nowrap transition-colors duration-200 ${
+              class={`py-2 px-1 relative whitespace-nowrap transition-all duration-200 ${
                 active
                   ? 'text-[#DC2626] font-black'
                   : 'hover:text-[var(--text-primary)] hover:text-[#DC2626]'
               }`}
             >
-              <span>{link.label}</span>
-              {active && (
-                <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
-              )}
-            </a>
-          );
-        })}
-      </nav>
-
-      <!-- Compact Desktop Navigation for Medium/Large Screens (lg to xl) -->
-      <nav class="hidden lg:flex xl:hidden items-center gap-3.5 text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] shrink-0">
-        {navLinks.map((link) => {
-          const active = isActive(link.href);
-          return (
-            <a
-              href={link.href}
-              class={`py-1 relative whitespace-nowrap transition-colors duration-200 ${
-                active
-                  ? 'text-[#DC2626] font-black'
-                  : 'hover:text-[var(--text-primary)] hover:text-[#DC2626]'
-              }`}
-            >
-              <span>{link.label}</span>
+              <span class="whitespace-nowrap">{link.label}</span>
               {active && (
                 <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
               )}
@@ -124,7 +102,7 @@ const navLinks = [
         <!-- Primary Quotation CTA -->
         <a
           href="/contacto"
-          class="px-4 sm:px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap"
+          class="px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap"
         >
           Cotizar
         </a>
