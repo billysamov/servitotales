@@ -8,19 +8,33 @@ const isActive = (path: string) => {
   return false;
 };
 
-const navLinks = [
-  { href: '/', label: 'Inicio', shortLabel: 'Inicio' },
-  { href: '/nosotros', label: 'Nosotros & ISO 9001', shortLabel: 'Nosotros & ISO' },
-  { href: '/maquinaria', label: 'Maquinaria & Minería', shortLabel: 'Maquinaria & Minería' },
-  { href: '/epp', label: 'EPP e Indumentaria', shortLabel: 'EPP Industrial' },
-  { href: '/suministros', label: 'Ferretería & Suministros', shortLabel: 'Ferretería' },
-  { href: '/contacto', label: 'Contacto', shortLabel: 'Contacto' },
+const isCatalogActive = pathname.startsWith('/maquinaria') || pathname.startsWith('/epp') || pathname.startsWith('/suministros');
+
+const catalogSubItems = [
+  {
+    href: '/maquinaria',
+    title: 'Maquinaria Pesada & Minería',
+    desc: 'Excavadoras, cargadores y minería subterránea trackless',
+    iconColor: 'bg-red-500/10 text-[#DC2626] border-red-500/20'
+  },
+  {
+    href: '/epp',
+    title: 'EPP e Indumentaria Industrial',
+    desc: 'Protección respiratoria 3M, arneses, cascos y trajes normados',
+    iconColor: 'bg-amber-500/10 text-amber-500 border-amber-500/20'
+  },
+  {
+    href: '/suministros',
+    title: 'Ferretería & Suministros',
+    desc: 'Pernos estructurales, abrasivos y mobiliario para campamento',
+    iconColor: 'bg-blue-500/10 text-blue-500 border-blue-500/20'
+  }
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full bg-[#060B14] text-slate-200 border-b border-slate-800 shadow-xl transition-colors duration-300 select-none">
+<header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-[#060B14]/95 text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800/90 backdrop-blur-md shadow-sm dark:shadow-xl transition-colors duration-300">
   <!-- Top Utility Bar (Docked) -->
-  <div class="hidden md:block bg-[#02050B] text-slate-400 text-[11px] font-semibold border-b border-slate-800/80 py-1.5 px-4 sm:px-6 lg:px-8">
+  <div class="hidden md:block bg-[#050B16] text-slate-300 text-[11px] font-semibold border-b border-slate-800/80 py-1.5 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Left: ISO Stamp & Operational Status -->
       <div class="flex items-center gap-4 sm:gap-6">
@@ -53,10 +67,10 @@ const navLinks = [
 
   <!-- Main Navigation Row -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20 gap-2 sm:gap-4">
+    <div class="flex items-center justify-between h-20 gap-4">
       <!-- Left: Brand Logo -->
       <a href="/" class="flex items-center gap-3 shrink-0 group">
-        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-blue-600 to-[#07172C] p-2 flex items-center justify-center border border-blue-500/40 shadow-md group-hover:scale-105 transition-transform">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0B2545] to-[#040A14] dark:from-blue-600 dark:to-[#07172C] p-2 flex items-center justify-center border border-blue-500/40 shadow-md group-hover:scale-105 transition-transform">
           <svg viewBox="0 0 40 40" class="w-full h-full" fill="none">
             <circle cx="20" cy="20" r="18" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="80 30"></circle>
             <path d="M12 25C12 20 16 18 20 16C24 14 28 14 28 10C28 7 24 6 20 6C16 6 13 8 13 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
@@ -64,55 +78,128 @@ const navLinks = [
           </svg>
         </div>
         <div class="flex flex-col">
-          <span class="text-lg sm:text-2xl font-black tracking-wider text-white font-heading leading-tight">
+          <span class="text-xl sm:text-2xl font-black tracking-wider text-slate-900 dark:text-white font-heading leading-tight">
             SERVI<span class="text-[#DC2626]">TOTALES</span>
           </span>
-          <span class="text-[7.5px] sm:text-[9px] tracking-widest uppercase font-bold text-blue-400 whitespace-nowrap">
+          <span class="text-[8px] sm:text-[9px] tracking-widest uppercase font-bold text-blue-600 dark:text-blue-400 whitespace-nowrap">
             Maquinaria • Minería • EPP • Suministros
           </span>
         </div>
       </a>
 
-      <!-- Center: Main Navigation Menu (Centered, Strict Single-Line & Tildes) -->
-      <nav class="hidden lg:flex items-center justify-center flex-1 mx-2 xl:mx-6 gap-3 xl:gap-6 text-xs font-bold uppercase tracking-wider text-slate-300">
-        {navLinks.map((link) => {
-          const active = isActive(link.href);
-          return (
-            <a
-              href={link.href}
-              class={`py-2 px-1.5 relative whitespace-nowrap transition-all duration-200 ${
-                active
-                  ? 'text-[#DC2626] font-black'
-                  : 'hover:text-white'
-              }`}
-            >
-              <span class="hidden 2xl:inline">{link.label}</span>
-              <span class="inline 2xl:hidden">{link.shortLabel}</span>
-              {active && (
-                <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
-              )}
-            </a>
-          );
-        })}
+      <!-- Center: Main Navigation Menu (Centered with Submenu Dropdown) -->
+      <nav class="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-6 xl:gap-9 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+        <!-- 1. Inicio -->
+        <a
+          href="/"
+          class={`py-2 relative whitespace-nowrap transition-colors ${
+            isActive('/')
+              ? 'text-[#DC2626] font-black'
+              : 'hover:text-[#DC2626] dark:hover:text-white'
+          }`}
+        >
+          <span>Inicio</span>
+          {isActive('/') && (
+            <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
+          )}
+        </a>
+
+        <!-- 2. Nosotros & ISO 9001 -->
+        <a
+          href="/nosotros"
+          class={`py-2 relative whitespace-nowrap transition-colors ${
+            isActive('/nosotros')
+              ? 'text-[#DC2626] font-black'
+              : 'hover:text-[#DC2626] dark:hover:text-white'
+          }`}
+        >
+          <span>Nosotros & ISO 9001</span>
+          {isActive('/nosotros') && (
+            <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
+          )}
+        </a>
+
+        <!-- 3. Catálogo & Divisiones (Dropdown Unificado) -->
+        <div class="relative group py-2">
+          <button
+            type="button"
+            class={`flex items-center gap-1.5 relative whitespace-nowrap transition-colors cursor-pointer ${
+              isCatalogActive
+                ? 'text-[#DC2626] font-black'
+                : 'hover:text-[#DC2626] dark:hover:text-white'
+            }`}
+          >
+            <span>Catálogo & Divisiones</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-[#DC2626]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+            </svg>
+            {isCatalogActive && (
+              <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
+            )}
+          </button>
+
+          <!-- Dropdown Mega Menu -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 w-80 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+            <div class="p-3 rounded-2xl bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-slate-700 shadow-2xl space-y-1.5">
+              {catalogSubItems.map((sub) => (
+                <a
+                  href={sub.href}
+                  class={`flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-[#111F38] transition-colors group/item ${
+                    pathname.startsWith(sub.href) ? 'bg-red-50 dark:bg-red-950/20' : ''
+                  }`}
+                >
+                  <div class={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 mt-0.5 ${sub.iconColor}`}>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="text-xs font-bold text-slate-900 dark:text-white block group-hover/item:text-[#DC2626] transition-colors">
+                      {sub.title}
+                    </span>
+                    <span class="text-[10px] text-slate-500 dark:text-slate-400 block normal-case font-normal leading-tight mt-0.5">
+                      {sub.desc}
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Contacto -->
+        <a
+          href="/contacto"
+          class={`py-2 relative whitespace-nowrap transition-colors ${
+            isActive('/contacto')
+              ? 'text-[#DC2626] font-black'
+              : 'hover:text-[#DC2626] dark:hover:text-white'
+          }`}
+        >
+          <span>Contacto</span>
+          {isActive('/contacto') && (
+            <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#DC2626] rounded-full"></span>
+          )}
+        </a>
       </nav>
 
       <!-- Right Controls: Light/Dark Toggle + Primary CTA -->
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <div class="flex items-center gap-3 shrink-0">
         <ThemeToggle />
 
         <!-- Primary Quotation CTA -->
         <a
           href="/contacto"
-          class="px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-black uppercase tracking-wider text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap"
+          class="px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap"
         >
           Cotizar
         </a>
 
-        <!-- Mobile Menu Toggle -->
+        <!-- Mobile Menu Toggle (Visible below lg) -->
         <button
           type="button"
           id="mobile-menu-btn"
-          class="lg:hidden p-2 rounded-xl border border-slate-800 bg-[#0B1528] text-slate-200 hover:border-[#DC2626] transition-colors"
+          class="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B1528] text-slate-800 dark:text-slate-200 hover:border-[#DC2626] transition-colors"
           aria-label="Abrir Menú"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,23 +211,22 @@ const navLinks = [
   </div>
 
   <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-[#0A1224] border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl animate-in fade-in duration-200">
-    {navLinks.map((link) => {
-      const active = isActive(link.href);
-      return (
-        <a
-          href={link.href}
-          class={`block py-2.5 px-3 rounded-xl text-sm font-bold transition-colors ${
-            active ? 'text-white bg-[#DC2626]' : 'text-slate-300 hover:bg-[#0F1E3A] hover:text-white'
-          }`}
-        >
-          {link.label}
-        </a>
-      );
-    })}
-    <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
-      <div class="flex items-center gap-2 text-xs font-bold text-amber-400 px-3">
-        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+  <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-[#0A1224] border-b border-slate-200 dark:border-slate-800 px-6 py-5 space-y-3 shadow-2xl animate-in fade-in duration-200">
+    <a href="/" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Inicio</a>
+    <a href="/nosotros" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/nosotros') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Nosotros & ISO 9001</a>
+    
+    <div class="py-2 px-3 space-y-2 bg-slate-50 dark:bg-[#0F1E3A] rounded-xl border border-slate-200 dark:border-slate-800">
+      <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider block">Divisiones y Catálogos:</span>
+      <a href="/maquinaria" class="block text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-[#DC2626] py-1">🚜 Maquinaria Pesada & Minería</a>
+      <a href="/epp" class="block text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-amber-500 py-1">🦺 EPP e Indumentaria</a>
+      <a href="/suministros" class="block text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-blue-500 py-1">🔩 Ferretería & Suministros</a>
+    </div>
+
+    <a href="/contacto" class={`block py-2.5 px-3 rounded-xl text-sm font-bold ${isActive('/contacto') ? 'text-white bg-[#DC2626]' : 'text-slate-700 dark:text-slate-300'}`}>Contacto</a>
+
+    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+      <div class="flex items-center gap-2 text-xs font-bold text-amber-500 px-3">
+        <span class="w-2 h-2 rounded-full bg-amber-500"></span>
         <span>Certificación SGC ISO 9001:2015</span>
       </div>
       <a
