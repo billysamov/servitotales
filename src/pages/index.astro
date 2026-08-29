@@ -293,78 +293,55 @@ const divisions = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero Master Timeline
-  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  function initAnimations() {
+    // Hero Entrance
+    gsap.fromTo('#hero-badge', 
+      { opacity: 0, y: -15 }, 
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }
+    );
+    gsap.fromTo('#hero-title', 
+      { opacity: 0, y: 25 }, 
+      { opacity: 1, y: 0, duration: 0.7, delay: 0.1, ease: 'power3.out' }
+    );
+    gsap.fromTo('#hero-desc, #hero-pills, #hero-ctas', 
+      { opacity: 0, y: 20 }, 
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.2, ease: 'power2.out' }
+    );
+    gsap.fromTo('#hero-panel', 
+      { opacity: 0, x: 30 }, 
+      { opacity: 1, x: 0, duration: 0.8, delay: 0.2, ease: 'power3.out' }
+    );
+    gsap.fromTo('.stat-card', 
+      { opacity: 0, y: 20 }, 
+      { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, delay: 0.4, ease: 'power2.out' }
+    );
 
-  tl.from('#hero-bg-img', {
-    scale: 1.1,
-    duration: 1.8,
-    ease: 'power2.out'
-  }, 0)
-  .from('#hero-badge', {
-    y: -20,
-    opacity: 0,
-    duration: 0.6,
-    ease: 'back.out(1.7)'
-  }, 0.2)
-  .from('#hero-title', {
-    y: 35,
-    opacity: 0,
-    duration: 0.8
-  }, 0.35)
-  .from('#hero-desc', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6
-  }, 0.5)
-  .from('#hero-pills > span', {
-    y: 15,
-    opacity: 0,
-    duration: 0.5,
-    stagger: 0.1,
-    ease: 'power2.out'
-  }, 0.65)
-  .from('#hero-ctas', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6
-  }, 0.8)
-  .from('#hero-panel', {
-    x: 40,
-    opacity: 0,
-    duration: 0.9,
-    ease: 'power3.out'
-  }, 0.4)
-  .from('.stat-card', {
-    y: 25,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: 'back.out(1.4)'
-  }, 0.9);
+    // Division Cards Scroll Animation
+    const divisionCards = document.querySelectorAll('.division-card');
+    if (divisionCards.length > 0) {
+      gsap.fromTo(divisionCards,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#divisiones',
+            start: 'top 92%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    }
 
-  // Scroll Trigger on Divisions
-  gsap.from('#divisions-header > *', {
-    scrollTrigger: {
-      trigger: '#divisions-header',
-      start: 'top 85%'
-    },
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power2.out'
-  });
+    ScrollTrigger.refresh();
+  }
 
-  gsap.from('.division-card', {
-    scrollTrigger: {
-      trigger: '.division-card',
-      start: 'top 85%'
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power3.out'
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimations);
+  } else {
+    initAnimations();
+  }
 </script>

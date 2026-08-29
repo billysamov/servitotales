@@ -114,38 +114,52 @@ import Layout from '../layouts/Layout.astro';
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero Entrance
-  gsap.from('#nosotros-hero > *', {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power3.out'
-  });
+  function initNosotros() {
+    gsap.fromTo('#nosotros-hero > *', 
+      { opacity: 0, y: 25 }, 
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out' }
+    );
 
-  // Section scroll triggers
-  gsap.utils.toArray<HTMLElement>('.gsap-fade-up').forEach((elem) => {
-    gsap.from(elem, {
-      scrollTrigger: {
-        trigger: elem,
-        start: 'top 85%'
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out'
+    document.querySelectorAll('.gsap-fade-up').forEach(elem => {
+      gsap.fromTo(elem,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: elem,
+            start: 'top 90%'
+          }
+        }
+      );
     });
-  });
 
-  gsap.from('.gsap-card', {
-    scrollTrigger: {
-      trigger: '.gsap-card',
-      start: 'top 85%'
-    },
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power3.out'
-  });
+    const cards = document.querySelectorAll('.gsap-card');
+    if (cards.length > 0) {
+      gsap.fromTo(cards,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cards[0],
+            start: 'top 90%'
+          }
+        }
+      );
+    }
+
+    ScrollTrigger.refresh();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNosotros);
+  } else {
+    initNosotros();
+  }
 </script>

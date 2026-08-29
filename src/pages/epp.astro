@@ -124,25 +124,38 @@ const eppCategories = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from('#epp-hero-content > *', {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power3.out'
-  });
+  function initEpp() {
+    gsap.fromTo('#epp-hero-content > *',
+      { opacity: 0, y: 25 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out' }
+    );
 
-  gsap.utils.toArray<HTMLElement>('.category-block').forEach((block) => {
-    gsap.from(block.querySelectorAll('.item-card'), {
-      scrollTrigger: {
-        trigger: block,
-        start: 'top 85%'
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power2.out'
+    document.querySelectorAll('.category-block').forEach(block => {
+      const items = block.querySelectorAll('.item-card');
+      if (items.length > 0) {
+        gsap.fromTo(items,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: block,
+              start: 'top 92%'
+            }
+          }
+        );
+      }
     });
-  });
+
+    ScrollTrigger.refresh();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEpp);
+  } else {
+    initEpp();
+  }
 </script>
