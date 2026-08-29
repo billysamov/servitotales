@@ -1,53 +1,53 @@
----
+Ôªø---
 import Layout from '../layouts/Layout.astro';
 
 const eppCategories = [
   {
-    title: "ProtecciÛn Respiratoria Normada",
-    description: "Sistemas para material particulado, polvos en suspensiÛn, vapores org·nicos y gases en mina.",
+    title: "Protecci√≥n Respiratoria Normada",
+    description: "Sistemas para material particulado, polvos en suspensi√≥n, vapores org√°nicos y gases en mina.",
     items: [
       { name: "Respiradores de Medio Rostro Serie 6200 / 7500", standard: "NIOSH / OSHA", brand: "3M / MSA" },
-      { name: "Respiradores Full Face Rostro Completo", standard: "ProtecciÛn Ocular + Respiratoria", brand: "3M / Moldex" },
-      { name: "Filtros y Cartuchos P100 para MinerÌa", standard: "RetenciÛn 99.97% PartÌculas", brand: "3M 2097 / 7093" },
-      { name: "Mascarillas Descartables N95 / KN95", standard: "Caja x 20 / 50 uds", brand: "CertificaciÛn ANSI" }
+      { name: "Respiradores Full Face Rostro Completo", standard: "Protecci√≥n Ocular + Respiratoria", brand: "3M / Moldex" },
+      { name: "Filtros y Cartuchos P100 para Miner√≠a", standard: "Retenci√≥n 99.97% Part√≠culas", brand: "3M 2097 / 7093" },
+      { name: "Mascarillas Descartables N95 / KN95", standard: "Caja x 20 / 50 uds", brand: "Certificaci√≥n ANSI" }
     ]
   },
   {
-    title: "ProtecciÛn para Trabajos en Altura",
-    description: "Equipos certificados para anclaje seguro, detenciÛn de caÌdas y rescate industrial.",
+    title: "Protecci√≥n para Trabajos en Altura",
+    description: "Equipos certificados para anclaje seguro, detenci√≥n de ca√≠das y rescate industrial.",
     items: [
-      { name: "ArnÈs de Cuerpo Entero de 4 Anillos", standard: "ANSI Z359.11 / OSHA", brand: "Capital Safety / MSA" },
-      { name: "LÌneas de Vida con Doble MosquetÛn y Absorbente", standard: "Capacidad 140 kg", brand: "3M DBI-SALA" },
-      { name: "LÌneas de Vida Retr·ctiles (Block AnticaÌdas)", standard: "Longitudes: 6m, 10m, 15m", brand: "Miller / 3M" },
-      { name: "Freno para Cuerda y Puntos de Anclaje MÛviles", standard: "Acero Inoxidable / Forjado", brand: "Petzl / MSA" }
+      { name: "Arn√©s de Cuerpo Entero de 4 Anillos", standard: "ANSI Z359.11 / OSHA", brand: "Capital Safety / MSA" },
+      { name: "L√≠neas de Vida con Doble Mosquet√≥n y Absorbente", standard: "Capacidad 140 kg", brand: "3M DBI-SALA" },
+      { name: "L√≠neas de Vida Retr√°ctiles (Block Antica√≠das)", standard: "Longitudes: 6m, 10m, 15m", brand: "Miller / 3M" },
+      { name: "Freno para Cuerda y Puntos de Anclaje M√≥viles", standard: "Acero Inoxidable / Forjado", brand: "Petzl / MSA" }
     ]
   },
   {
-    title: "ProtecciÛn de Cabeza, Ocular y Auditiva",
-    description: "Cascos dielÈctricos, lentes antiempaÒantes y protectores auditivos copa/tapÛn.",
+    title: "Protecci√≥n de Cabeza, Ocular y Auditiva",
+    description: "Cascos diel√©ctricos, lentes antiempa√±antes y protectores auditivos copa/tap√≥n.",
     items: [
-      { name: "Cascos de Seguridad DielÈctricos Tipo I y II", standard: "ANSI Z89.1 Clase E & G", brand: "MSA V-Gard / 3M" },
-      { name: "Lentes de Seguridad con ProtecciÛn UV y Antirrayas", standard: "ANSI Z87.1+", brand: "Nemesis / 3M" },
+      { name: "Cascos de Seguridad Diel√©ctricos Tipo I y II", standard: "ANSI Z89.1 Clase E & G", brand: "MSA V-Gard / 3M" },
+      { name: "Lentes de Seguridad con Protecci√≥n UV y Antirrayas", standard: "ANSI Z87.1+", brand: "Nemesis / 3M" },
       { name: "Protectores Auditivos Tipo Copa para Casco", standard: "NRR 26 a 31 dB", brand: "Peltor / Howard Leight" },
-      { name: "Barboquejos El·sticos con Mentonera", standard: "3 y 4 Puntos de SujeciÛn", brand: "Servitotales Safety" }
+      { name: "Barboquejos El√°sticos con Mentonera", standard: "3 y 4 Puntos de Sujeci√≥n", brand: "Servitotales Safety" }
     ]
   },
   {
-    title: "Indumentaria Especial & Ropa IgnÌfuga",
-    description: "Trajes de protecciÛn quÌmica, tÈrmicos para altura y uniformes de alta visibilidad.",
+    title: "Indumentaria Especial & Ropa Ign√≠fuga",
+    description: "Trajes de protecci√≥n qu√≠mica, t√©rmicos para altura y uniformes de alta visibilidad.",
     items: [
-      { name: "Mamelucos y Uniformes con Cintas Reflectivas 3M", standard: "Tela Drill / Taslan TÈrmico", brand: "ConfecciÛn Minera" },
-      { name: "Trajes de ProtecciÛn QuÌmica Tyvek / Tychem", standard: "MicropartÌculas y LÌquidos", brand: "DuPont" },
-      { name: "Ropa IgnÌfuga para Soldadura y Oxicorte", standard: "NFPA 2112 / NFPA 70E", brand: "Westex / Weldas" },
-      { name: "Calzado de Seguridad con Puntera Composite / Acero", standard: "ASTM F2413 / DielÈctrico", brand: "Bata / Caterpillar" }
+      { name: "Mamelucos y Uniformes con Cintas Reflectivas 3M", standard: "Tela Drill / Taslan T√©rmico", brand: "Confecci√≥n Minera" },
+      { name: "Trajes de Protecci√≥n Qu√≠mica Tyvek / Tychem", standard: "Micropart√≠culas y L√≠quidos", brand: "DuPont" },
+      { name: "Ropa Ign√≠fuga para Soldadura y Oxicorte", standard: "NFPA 2112 / NFPA 70E", brand: "Westex / Weldas" },
+      { name: "Calzado de Seguridad con Puntera Composite / Acero", standard: "ASTM F2413 / Diel√©ctrico", brand: "Bata / Caterpillar" }
     ]
   }
 ];
 ---
 
 <Layout
-  title="EPP & Equipos de ProtecciÛn Personal | SERVITOTALES S.A.C."
-  description="DistribuciÛn mayorista de EPP certificado para minerÌa y construcciÛn. Respiradores 3M P100, arneses, cascos, trajes Tyvek y botas dielÈctricas."
+  title="EPP & Equipos de Protecci√≥n Personal | SERVITOTALES S.A.C."
+  description="Distribuci√≥n mayorista de EPP certificado para miner√≠a y construcci√≥n. Respiradores 3M P100, arneses, cascos, trajes Tyvek y botas diel√©ctricas."
 >
   <!-- Header -->
   <section class="relative py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
@@ -55,10 +55,10 @@ const eppCategories = [
       <div class="max-w-3xl space-y-4">
         <span class="tech-label">04 // SEGURIDAD INDUSTRIAL & SST</span>
         <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
-          Equipos de ProtecciÛn Personal (EPP)
+          Equipos de Protecci√≥n Personal (EPP)
         </h1>
         <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-          Suministro homologado por lote para faenas mineras, industrias quÌmicas y obras civiles. CertificaciÛn ANSI, NIOSH, OSHA y fichas tÈcnicas aprobadas.
+          Suministro homologado por lote para faenas mineras, industrias qu√≠micas y obras civiles. Certificaci√≥n ANSI, NIOSH, OSHA y fichas t√©cnicas aprobadas.
         </p>
       </div>
     </div>

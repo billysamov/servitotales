@@ -10,10 +10,10 @@ const isActive = (path: string) => {
 
 const navLinks = [
   { href: '/', label: 'Inicio', shortLabel: 'Inicio' },
-  { href: '/nosotros', label: 'Nosotros & ISO 9001', shortLabel: 'Nosotros' },
-  { href: '/maquinaria', label: 'Maquinaria & Minería', shortLabel: 'Maquinaria' },
-  { href: '/epp', label: 'EPP e Indumentaria', shortLabel: 'EPP' },
-  { href: '/suministros', label: 'Ferretería & Suministros', shortLabel: 'Suministros' },
+  { href: '/nosotros', label: 'Nosotros & ISO 9001', shortLabel: 'Nosotros & ISO' },
+  { href: '/maquinaria', label: 'Maquinaria & Minería', shortLabel: 'Maquinaria & Minería' },
+  { href: '/epp', label: 'EPP e Indumentaria', shortLabel: 'EPP Industrial' },
+  { href: '/suministros', label: 'Ferretería & Suministros', shortLabel: 'Ferretería' },
   { href: '/contacto', label: 'Contacto', shortLabel: 'Contacto' },
 ];
 ---
@@ -73,7 +73,7 @@ const navLinks = [
         </div>
       </a>
 
-      <!-- Center: Main Navigation Menu (Centered, Auto-adaptive labels, No Overflows) -->
+      <!-- Center: Main Navigation Menu (Centered, Strict Single-Line & Tildes) -->
       <nav class="hidden lg:flex items-center justify-center flex-1 mx-2 xl:mx-6 gap-3 xl:gap-6 text-xs font-bold uppercase tracking-wider text-slate-300">
         {navLinks.map((link) => {
           const active = isActive(link.href);
@@ -86,7 +86,6 @@ const navLinks = [
                   : 'hover:text-white'
               }`}
             >
-              <!-- Full label on 2xl+, short label on lg/xl to guarantee 0 overflow -->
               <span class="hidden 2xl:inline">{link.label}</span>
               <span class="inline 2xl:hidden">{link.shortLabel}</span>
               {active && (
@@ -109,7 +108,7 @@ const navLinks = [
           Cotizar
         </a>
 
-        <!-- Mobile Menu Toggle (Visible below lg: 1024px) -->
+        <!-- Mobile Menu Toggle -->
         <button
           type="button"
           id="mobile-menu-btn"
