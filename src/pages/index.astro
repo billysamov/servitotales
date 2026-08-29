@@ -32,6 +32,39 @@ const marqueeItems = [
   "EQUIPOS DE PROTECCIÓN PERSONAL ANSI/OSHA",
   "MANTENIMIENTO TÉCNICO ESPECIALIZADO 24/7"
 ];
+
+const divisions = [
+  {
+    title: "Maquinaria Pesada & Minería",
+    tag: "División Maquinaria",
+    tagColor: "text-[#DC2626] bg-red-500/10 border-red-500/20",
+    desc: "Excavadoras, cargadores frontales, volquetes, telehandlers y sistemas para minería subterránea trackless (Jumbos y Scooptrams).",
+    href: "/maquinaria",
+    cta: "Ver Catálogo de Flota",
+    img: "/images/division-maquinaria.jpg",
+    alt: "Maquinaria pesada y excavadoras en operación"
+  },
+  {
+    title: "Equipos de Protección (EPP)",
+    tag: "Seguridad Industrial",
+    tagColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
+    desc: "Cascos dieléctricos, respiradores con filtros P100, arneses anticaídas, trajes Tyvek y ropa ignífuga homologada ANSI/OSHA.",
+    href: "/epp",
+    cta: "Ver Catálogo de EPP",
+    img: "/images/division-epp.jpg",
+    alt: "Equipos de protección personal y seguridad industrial"
+  },
+  {
+    title: "Ferretería & Suministros",
+    tag: "Ferretería & Mobiliario",
+    tagColor: "text-blue-500 bg-blue-500/10 border-blue-500/20",
+    desc: "Herramientas de alto torque, pernos estructurales A325, abrasivos, pinturas epóxicas y mobiliario reforzado para campamento.",
+    href: "/suministros",
+    cta: "Ver Catálogo de Suministros",
+    img: "/images/division-suministros.jpg",
+    alt: "Ferretería industrial, herramientas y suministros para obras"
+  }
+];
 ---
 
 <Layout>
@@ -191,7 +224,7 @@ const marqueeItems = [
     </div>
   </section>
 
-  <!-- Business Divisions Portal Grid -->
+  <!-- Business Divisions Portal Grid (Featured with Real Photography & Linked Directly) -->
   <section class="py-20 lg:py-28 relative border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mb-14 space-y-3">
@@ -205,78 +238,53 @@ const marqueeItems = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="p-8 rounded-3xl industrial-card flex flex-col justify-between group">
-          <div>
-            <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-[#DC2626] mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-              </svg>
+        {divisions.map((div) => (
+          <div class="rounded-3xl industrial-card overflow-hidden flex flex-col justify-between group shadow-lg hover:shadow-2xl transition-all duration-300">
+            <!-- Card Image Banner with Hover Zoom -->
+            <div class="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-900">
+              <img
+                src={div.img}
+                alt={div.alt}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-surface)] via-transparent to-black/30"></div>
+              
+              <!-- Floating Category Badge on Image -->
+              <div class="absolute top-4 left-4">
+                <span class={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider backdrop-blur-md border ${div.tagColor}`}>
+                  {div.tag}
+                </span>
+              </div>
             </div>
-            <span class="text-xs font-mono font-bold text-[#DC2626] uppercase">División Maquinaria</span>
-            <h3 class="text-2xl font-black text-[var(--text-primary)] mt-1 mb-3 font-heading group-hover:text-[#DC2626] transition-colors">
-              Maquinaria Pesada & Minería
-            </h3>
-            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
-              Excavadoras, cargadores, volquetes, telehandlers y sistemas para minería subterránea trackless.
-            </p>
-          </div>
-          <div class="pt-5 border-t border-[var(--border-subtle)]">
-            <a href="/maquinaria" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#DC2626] group-hover:translate-x-1 transition-all">
-              <span>Ver Catálogo de Flota</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-          </div>
-        </div>
 
-        <!-- Card 2 -->
-        <div class="p-8 rounded-3xl industrial-card flex flex-col justify-between group">
-          <div>
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-            </div>
-            <span class="text-xs font-mono font-bold text-amber-500 uppercase">Seguridad Industrial</span>
-            <h3 class="text-2xl font-black text-[var(--text-primary)] mt-1 mb-3 font-heading group-hover:text-amber-500 transition-colors">
-              Equipos de Protección (EPP)
-            </h3>
-            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
-              Cascos, respiradores con filtros P100, arneses anticaídas, trajes Tyvek e indumentaria ignífuga.
-            </p>
-          </div>
-          <div class="pt-5 border-t border-[var(--border-subtle)]">
-            <a href="/epp" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-500 group-hover:translate-x-1 transition-all">
-              <span>Ver Catálogo de EPP</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-          </div>
-        </div>
+            <!-- Card Body Content -->
+            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl sm:text-2xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#DC2626] transition-colors leading-tight">
+                  {div.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mt-2.5">
+                  {div.desc}
+                </p>
+              </div>
 
-        <!-- Card 3 -->
-        <div class="p-8 rounded-3xl industrial-card flex flex-col justify-between group">
-          <div>
-            <div class="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
+              <!-- CTA Link -->
+              <div class="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between">
+                <a
+                  href={div.href}
+                  class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#DC2626] hover:translate-x-1 transition-all"
+                >
+                  <span>{div.cta}</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
             </div>
-            <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase">Ferretería & Mobiliario</span>
-            <h3 class="text-2xl font-black text-[var(--text-primary)] mt-1 mb-3 font-heading group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-              Ferretería & Suministros
-            </h3>
-            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
-              Herramientas, pernos estructurales, abrasivos, pinturas epóxicas y mobiliario de campamento.
-            </p>
           </div>
-          <div class="pt-5 border-t border-[var(--border-subtle)]">
-            <a href="/suministros" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-all">
-              <span>Ver Suministros</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>

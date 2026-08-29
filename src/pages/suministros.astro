@@ -39,15 +39,30 @@ const supplyCategories = [
   title="Ferretería Industrial, Mobiliario & Suministros | SERVITOTALES S.A.C."
   description="Abastecimiento corporativo de ferretería pesada, pernos A325, abrasivos, lockers metálicos para campamento y pinturas industriales."
 >
-  <!-- Header -->
-  <section class="relative py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Atmospheric Hero Header with Division Image -->
+  <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
+    <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
+      <img
+        src="/images/division-suministros.jpg"
+        alt="Ferretería industrial, suministros y mobiliario Servitotales"
+        loading="eager"
+        decoding="async"
+        class="w-full h-full object-cover opacity-45 contrast-115 saturate-110"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#050A14] via-[#050A14]/85 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#050A14] via-transparent to-transparent"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl space-y-4">
-        <span class="tech-label">05 // ABASTECIMIENTO INTEGRAL</span>
-        <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          05 // ABASTECIMIENTO INTEGRAL
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
           Ferretería Industrial & Mobiliario de Obra
         </h1>
-        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
           Logística ágil y suministro mayorista directo para frentes de trabajo, campamentos mineros e infraestructuras civiles a nivel nacional.
         </p>
       </div>

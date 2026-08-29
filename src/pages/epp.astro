@@ -49,15 +49,30 @@ const eppCategories = [
   title="EPP & Equipos de Protección Personal | SERVITOTALES S.A.C."
   description="Distribución mayorista de EPP certificado para minería y construcción. Respiradores 3M P100, arneses, cascos, trajes Tyvek y botas dieléctricas."
 >
-  <!-- Header -->
-  <section class="relative py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Atmospheric Hero Header with Division Image -->
+  <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
+    <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
+      <img
+        src="/images/division-epp.jpg"
+        alt="Equipos de protección personal y seguridad industrial Servitotales"
+        loading="eager"
+        decoding="async"
+        class="w-full h-full object-cover opacity-45 contrast-115 saturate-110"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#050A14] via-[#050A14]/85 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#050A14] via-transparent to-transparent"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl space-y-4">
-        <span class="tech-label">04 // SEGURIDAD INDUSTRIAL & SST</span>
-        <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/35 text-amber-400 font-mono text-[11px] font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          04 // SEGURIDAD INDUSTRIAL & SST
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
           Equipos de Protección Personal (EPP)
         </h1>
-        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
           Suministro homologado por lote para faenas mineras, industrias químicas y obras civiles. Certificación ANSI, NIOSH, OSHA y fichas técnicas aprobadas.
         </p>
       </div>
