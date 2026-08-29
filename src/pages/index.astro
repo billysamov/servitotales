@@ -3,34 +3,24 @@ import Layout from '../layouts/Layout.astro';
 
 const equipmentLines = [
   {
-    name: "Excavadoras sobre Orugas (CAT / Komatsu)",
+    name: "Excavadoras sobre Orugas",
     tag: "CAT 320/336",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Excavadoras%20sobre%20Orugas%20(CAT%20%2F%20Komatsu)"
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Excavadoras%20sobre%20Orugas"
   },
   {
-    name: "Cargadores Frontales & Retroexcavadoras",
-    tag: "Carga Pesada",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Cargadores%20Frontales%20%26%20Retroexcavadoras"
+    name: "Cargadores & Retroexcavadoras",
+    tag: "Línea Amarilla",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Cargadores%20Frontales"
   },
   {
-    name: "Volquetes y Camiones Grúa / Plataforma",
-    tag: "Acarreo en Mina",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Volquetes%20y%20Camiones%20Gr%C3%BAa%20%2F%20Plataforma"
+    name: "Minería Subterránea Trackless",
+    tag: "Jumbos / Scoops",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Mineria%20Trackless"
   },
   {
-    name: "Manipuladores Telescópicos (Telehandlers)",
-    tag: "Izaje Versátil",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Manipuladores%20Telesc%C3%B3picos%20(Telehandlers)"
-  },
-  {
-    name: "Rodillos Compactadores y Minicargadores",
-    tag: "Obras Viales",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Rodillos%20Compactadores%20y%20Minicargadores"
-  },
-  {
-    name: "Grupos Electrógenos & Torres de Iluminación",
-    tag: "Energía 24/7",
-    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20consultar%20disponibilidad%20y%20cotizar%3A%20Grupos%20Electr%C3%B3genos%20%26%20Torres%20de%20Iluminaci%C3%B3n"
+    name: "Volquetes & Camiones Grúa",
+    tag: "Acarreo Pesado",
+    href: "https://wa.me/51963895085?text=Hola%20Servitotales%2C%20deseo%20cotizar%3A%20Volquetes%20y%20Camiones"
   }
 ];
 
@@ -40,14 +30,13 @@ const marqueeItems = [
   "OPERADORES Y TÉCNICOS HOMOLOGADOS",
   "ENTREGA DIRECTA EN OBRA A NIVEL NACIONAL",
   "EQUIPOS DE PROTECCIÓN PERSONAL ANSI/OSHA",
-  "MANTENIMIENTO TÉCNICO ESPECIALIZADO 24/7",
-  "SUMINISTROS CORPORATIVOS Y MINERÍA"
+  "MANTENIMIENTO TÉCNICO ESPECIALIZADO 24/7"
 ];
 ---
 
 <Layout>
-  <!-- Hero Section (Always Dark Industrial Aesthetic in both Light and Dark modes) -->
-  <section id="inicio" class="relative min-h-[92vh] flex flex-col justify-center pt-16 pb-20 lg:pt-20 lg:pb-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
+  <!-- Hero Section: Clean, Cinematic, High-Impact & Spacious -->
+  <section id="inicio" class="relative min-h-[85vh] lg:min-h-[88vh] flex flex-col justify-center pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
     <!-- Full-Bleed Atmospheric Background Image -->
     <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
       <img
@@ -55,93 +44,52 @@ const marqueeItems = [
         alt="Flota de maquinaria pesada Servitotales en faena al atardecer"
         loading="eager"
         decoding="async"
-        class="w-full h-full object-cover object-right lg:object-center opacity-65 contrast-115 saturate-110 scale-105"
+        class="w-full h-full object-cover object-right lg:object-center opacity-60 contrast-115 saturate-110"
       />
-      <!-- Directional Smooth Gradient Overlays for Maximum Text Legibility -->
+      <!-- Directional Smooth Gradient Overlays -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#050A14] via-[#050A14]/90 via-45% to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-[#050A14] via-transparent to-transparent"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        <!-- Left Column: Editorial Industrial Content & Guarantees -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Left Column: Focused, Clean & Direct -->
         <div class="lg:col-span-7 space-y-6">
-          <!-- Technical Engineering Label -->
-          <div class="flex items-center gap-3">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/15 border border-red-500/35 text-red-400 font-mono text-[11px] font-bold tracking-wider uppercase shadow-inner">
-              <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-              SGC ISO 9001:2015 CERTIFICADO • MINERÍA Y CONSTRUCCIÓN
+          <!-- ISO Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/15 border border-red-500/30 text-red-400 font-mono text-[11px] font-bold tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            <span>SGC ISO 9001:2015 • MINERÍA & CONSTRUCCIÓN</span>
+          </div>
+
+          <!-- Main Headline (Punchy & Direct) -->
+          <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-black tracking-tight text-white leading-[1.1] font-heading">
+            Potenciamos tus Proyectos con <br class="hidden sm:inline" />
+            <span class="text-gradient-red">Maquinaria Pesada & EPP</span>
+          </h1>
+
+          <!-- Concise Subtitle -->
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl font-normal">
+            Aliado estratégico para construcción, minería y obras viales a nivel nacional. Flota moderna con operadores homologados, mantenimiento 24/7 y entrega directa en obra.
+          </p>
+
+          <!-- Core Benefits (Minimalist horizontal pill list) -->
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-slate-300 font-semibold pt-1">
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center gap-1.5">
+              <span class="text-emerald-400">✓</span> Operadores Homologados
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center gap-1.5">
+              <span class="text-blue-400">✓</span> Soporte en Sitio 24/7
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center gap-1.5">
+              <span class="text-amber-400">✓</span> Despacho a Nivel Nacional
             </span>
           </div>
 
-          <!-- Main Headline -->
-          <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-white leading-[1.08] font-heading">
-            Potenciamos tus Proyectos <br class="hidden sm:inline" />con <br class="hidden sm:inline" />
-            <span class="text-gradient-red">Maquinaria Pesada, EPP y Suministros Industriales</span>
-          </h1>
-
-          <!-- Subtitle -->
-          <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl font-medium">
-            Aliado estratégico clave para construcción, minería superficial y subterránea, obras viales e industria a nivel nacional. Disponibilidad inmediata, operadores homologados y entrega directa en obra.
-          </p>
-
-          <!-- Technical Guarantees Matrix -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 py-2">
-            <div class="p-3.5 rounded-2xl bg-[#0B1528]/85 backdrop-blur-md border border-slate-800/90 flex items-start gap-3 shadow-lg">
-              <div class="w-6 h-6 rounded-lg bg-red-500/20 text-[#DC2626] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block">Modalidad de Alquiler</span>
-                <span class="text-xs font-bold text-white">Con Operador Homologado o Equipo Seco</span>
-              </div>
-            </div>
-
-            <div class="p-3.5 rounded-2xl bg-[#0B1528]/85 backdrop-blur-md border border-slate-800/90 flex items-start gap-3 shadow-lg">
-              <div class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block">Soporte y Mantenimiento</span>
-                <span class="text-xs font-bold text-white">Asistencia Mecánica en Sitio 24/7</span>
-              </div>
-            </div>
-
-            <div class="p-3.5 rounded-2xl bg-[#0B1528]/85 backdrop-blur-md border border-slate-800/90 flex items-start gap-3 shadow-lg">
-              <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                </svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block">Seguridad y Normativa</span>
-                <span class="text-xs font-bold text-white">Checklist Diario y Homologación SST</span>
-              </div>
-            </div>
-
-            <div class="p-3.5 rounded-2xl bg-[#0B1528]/85 backdrop-blur-md border border-slate-800/90 flex items-start gap-3 shadow-lg">
-              <div class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block">Logística de Despacho</span>
-                <span class="text-xs font-bold text-white">Entrega Directa con Cama Baja en Obra</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+          <!-- Direct CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
             <a
               href="/contacto"
-              class="px-8 py-4 text-xs font-black uppercase tracking-widest text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-xl shadow-lg shadow-red-950/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 cursor-pointer"
+              class="px-8 py-4 text-xs font-black uppercase tracking-widest text-white bg-[#DC2626] hover:bg-[#B91C1C] rounded-2xl shadow-xl shadow-red-950/50 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 cursor-pointer"
             >
               <span>Solicitar Cotización Inmediata</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,64 +98,55 @@ const marqueeItems = [
             </a>
             <a
               href="/maquinaria"
-              class="px-8 py-4 text-xs font-black uppercase tracking-widest text-white bg-[#0B1528]/90 hover:bg-[#111F38] border border-slate-700/80 rounded-xl transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-md"
+              class="px-7 py-4 text-xs font-black uppercase tracking-widest text-slate-200 hover:text-white bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 rounded-2xl transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 backdrop-blur-md"
             >
-              <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
-              </svg>
-              <span>Ver Catálogo de Maquinaria</span>
+              <span>Ver Catálogo</span>
             </a>
           </div>
         </div>
 
-        <!-- Right Column: Glass Telemetry Panel -->
+        <!-- Right Column: Streamlined Quick-Quotation Panel -->
         <div class="lg:col-span-5 flex flex-col">
-          <div class="relative rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl bg-[#070F1E]/95 backdrop-blur-xl p-6 sm:p-8">
-            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+          <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-[#081020]/90 backdrop-blur-xl p-6 sm:p-7 space-y-4">
+            <!-- Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-amber-500 block">Brochure Técnico Oficial</span>
-                <h3 class="text-base sm:text-lg font-black font-heading text-white">Disponibilidad de Flota</h3>
+                <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-amber-400 block">Cotización Directa</span>
+                <h3 class="text-base font-black font-heading text-white">Disponibilidad de Flota</h3>
               </div>
-              <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold">
+              <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>En Servicio Activo</span>
+                <span>En Servicio</span>
               </div>
             </div>
 
-            <div class="py-5 space-y-2">
-              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block mb-2 font-bold">
-                Seleccionar Línea para Cotización Inmediata:
-              </span>
-              <div class="space-y-2">
-                {equipmentLines.map((item) => (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center justify-between p-3 rounded-xl bg-[#0D192F]/80 hover:bg-[#DC2626] hover:text-white border border-slate-800 hover:border-transparent transition-all text-xs font-bold text-white group shadow-sm"
-                  >
-                    <span class="flex items-center gap-2.5">
-                      <span class="w-1.5 h-1.5 rounded-full bg-[#DC2626] group-hover:bg-white transition-colors"></span>
-                      <span>{item.name}</span>
-                    </span>
-                    <div class="flex items-center gap-2">
-                      <span class="text-[10px] font-mono text-slate-400 group-hover:text-white/80 hidden sm:inline">{item.tag}</span>
-                      <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
-                  </a>
-                ))}
-              </div>
+            <!-- Streamlined Selector (4 Core Categories) -->
+            <div class="space-y-2">
+              {equipmentLines.map((item) => (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center justify-between p-3 rounded-xl bg-[#0D182E]/70 hover:bg-[#DC2626] hover:text-white border border-slate-800/90 hover:border-transparent transition-all text-xs font-bold text-slate-200 group shadow-sm"
+                >
+                  <span class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#DC2626] group-hover:bg-white transition-colors"></span>
+                    <span>{item.name}</span>
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono text-slate-400 group-hover:text-white/90">{item.tag}</span>
+                    <svg class="w-3.5 h-3.5 text-slate-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </a>
+              ))}
             </div>
 
-            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
-              <div class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold font-mono">ISO 9001:2015</span>
-                <span class="text-slate-500">•</span>
-                <span class="text-slate-300 font-medium">Atención 24/7</span>
-              </div>
-              <a href="tel:963895085" class="text-xs font-bold text-blue-400 hover:underline flex items-center gap-1 font-mono">
+            <!-- Footer Contact Call -->
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+              <span class="text-slate-400 font-medium">Atención Técnica 24/7</span>
+              <a href="tel:963895085" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1 font-mono">
                 <span>+51 963 895 085</span>
               </a>
             </div>
@@ -215,38 +154,34 @@ const marqueeItems = [
         </div>
       </div>
 
-      <!-- Live Performance Metrics Strip -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-14 pt-10 border-t border-slate-800/80">
-        <div class="p-6 rounded-2xl bg-[#0B1528]/80 border border-slate-800/90 shadow-lg group hover:border-[#DC2626] transition-colors">
-          <div class="text-3xl sm:text-4xl font-black text-white font-heading group-hover:text-[#DC2626] transition-colors">ISO 9001</div>
-          <div class="text-xs sm:text-sm font-bold text-slate-200 mt-1.5">Certificación SGC</div>
-          <div class="text-[11px] text-slate-400 mt-0.5">Estándar internacional 2015</div>
+      <!-- Compact Performance Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-800/70">
+        <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left">
+          <div class="text-2xl sm:text-3xl font-black text-white font-heading">ISO 9001</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">Certificación SGC</div>
         </div>
-        <div class="p-6 rounded-2xl bg-[#0B1528]/80 border border-slate-800/90 shadow-lg group hover:border-[#DC2626] transition-colors">
-          <div class="text-3xl sm:text-4xl font-black text-white font-heading group-hover:text-[#DC2626] transition-colors">100%</div>
-          <div class="text-xs sm:text-sm font-bold text-slate-200 mt-1.5">Cobertura Nacional</div>
-          <div class="text-[11px] text-slate-400 mt-0.5">Entrega directa en obra</div>
+        <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left">
+          <div class="text-2xl sm:text-3xl font-black text-white font-heading">100%</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">Cobertura Nacional</div>
         </div>
-        <div class="p-6 rounded-2xl bg-[#0B1528]/80 border border-slate-800/90 shadow-lg group hover:border-[#DC2626] transition-colors">
-          <div class="text-3xl sm:text-4xl font-black text-white font-heading group-hover:text-[#DC2626] transition-colors">24/7</div>
-          <div class="text-xs sm:text-sm font-bold text-slate-200 mt-1.5">Soporte Mecánico</div>
-          <div class="text-[11px] text-slate-400 mt-0.5">Mantenimiento en sitio</div>
+        <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left">
+          <div class="text-2xl sm:text-3xl font-black text-white font-heading">24/7</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">Soporte Mecánico</div>
         </div>
-        <div class="p-6 rounded-2xl bg-[#0B1528]/80 border border-slate-800/90 shadow-lg group hover:border-[#DC2626] transition-colors">
-          <div class="text-3xl sm:text-4xl font-black text-white font-heading group-hover:text-[#DC2626] transition-colors">2030</div>
-          <div class="text-xs sm:text-sm font-bold text-slate-200 mt-1.5">Visión de Liderazgo</div>
-          <div class="text-[11px] text-slate-400 mt-0.5">Excelencia e innovación</div>
+        <div class="p-4 rounded-2xl bg-[#0B1528]/60 border border-slate-800/80 text-center sm:text-left">
+          <div class="text-2xl sm:text-3xl font-black text-white font-heading">2030</div>
+          <div class="text-xs text-slate-300 font-semibold mt-0.5">Visión de Liderazgo</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Kinetic Marquee Ticker -->
-  <section class="py-5 bg-[var(--bg-surface)] border-b border-[var(--border-subtle)] overflow-hidden relative">
+  <section class="py-4 bg-[var(--bg-surface)] border-b border-[var(--border-subtle)] overflow-hidden relative">
     <div class="marquee-track flex items-center gap-12 whitespace-nowrap">
       {[...marqueeItems, ...marqueeItems].map((item) => (
         <div class="flex items-center gap-12 flex-shrink-0">
-          <span class="text-xs sm:text-sm font-black tracking-widest text-[var(--text-primary)] uppercase flex items-center gap-3 font-heading">
+          <span class="text-xs font-black tracking-widest text-[var(--text-primary)] uppercase flex items-center gap-3 font-heading">
             <span class="w-2 h-2 rounded-full bg-[#DC2626]"></span>
             <span>{item}</span>
           </span>
@@ -257,24 +192,24 @@ const marqueeItems = [
   </section>
 
   <!-- Business Divisions Portal Grid -->
-  <section class="py-24 lg:py-36 relative border-b border-[var(--border-subtle)]">
+  <section class="py-20 lg:py-28 relative border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-16 space-y-4">
+      <div class="max-w-3xl mb-14 space-y-3">
         <span class="tech-label">01 // DIVISIONES OPERATIVAS & SGC ISO 9001</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--text-primary)] leading-tight font-heading">
           Soluciones Integrales para Minería, Construcción e Industria
         </h2>
-        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-          Explora nuestras unidades de negocio homologadas para proyectos en costa, sierra y selva con despacho directo en obra.
+        <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+          Unidades de negocio homologadas para proyectos en costa, sierra y selva con despacho directo en obra.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="p-8 sm:p-10 rounded-3xl industrial-card flex flex-col justify-between group">
+        <div class="p-8 rounded-3xl industrial-card flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-[#DC2626] mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-[#DC2626] mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
               </svg>
             </div>
@@ -283,10 +218,10 @@ const marqueeItems = [
               Maquinaria Pesada & Minería
             </h3>
             <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
-              Excavadoras, cargadores, volquetes, telehandlers y sistemas para minería subterránea trackless (Jumbos y Scooptrams).
+              Excavadoras, cargadores, volquetes, telehandlers y sistemas para minería subterránea trackless.
             </p>
           </div>
-          <div class="pt-6 border-t border-[var(--border-subtle)]">
+          <div class="pt-5 border-t border-[var(--border-subtle)]">
             <a href="/maquinaria" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#DC2626] group-hover:translate-x-1 transition-all">
               <span>Ver Catálogo de Flota</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -295,10 +230,10 @@ const marqueeItems = [
         </div>
 
         <!-- Card 2 -->
-        <div class="p-8 sm:p-10 rounded-3xl industrial-card flex flex-col justify-between group">
+        <div class="p-8 rounded-3xl industrial-card flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
             </div>
@@ -307,10 +242,10 @@ const marqueeItems = [
               Equipos de Protección (EPP)
             </h3>
             <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
-              Cascos, respiradores Full Face con filtros P100, arneses anticaídas, trajes Tyvek y ropa ignífuga homologada.
+              Cascos, respiradores con filtros P100, arneses anticaídas, trajes Tyvek e indumentaria ignífuga.
             </p>
           </div>
-          <div class="pt-6 border-t border-[var(--border-subtle)]">
+          <div class="pt-5 border-t border-[var(--border-subtle)]">
             <a href="/epp" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-500 group-hover:translate-x-1 transition-all">
               <span>Ver Catálogo de EPP</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -319,10 +254,10 @@ const marqueeItems = [
         </div>
 
         <!-- Card 3 -->
-        <div class="p-8 sm:p-10 rounded-3xl industrial-card flex flex-col justify-between group">
+        <div class="p-8 rounded-3xl industrial-card flex flex-col justify-between group">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-blue-600/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
@@ -332,10 +267,10 @@ const marqueeItems = [
               Ferretería & Suministros
             </h3>
             <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
-              Herramientas, pernos de alta resistencia, abrasivos, pinturas epóxicas, mobiliario de campamento y lockers metálicos.
+              Herramientas, pernos estructurales, abrasivos, pinturas epóxicas y mobiliario de campamento.
             </p>
           </div>
-          <div class="pt-6 border-t border-[var(--border-subtle)]">
+          <div class="pt-5 border-t border-[var(--border-subtle)]">
             <a href="/suministros" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-all">
               <span>Ver Suministros</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
