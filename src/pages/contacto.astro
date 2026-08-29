@@ -6,16 +6,31 @@ import Layout from '../layouts/Layout.astro';
   title="Contacto & Mesa de Cotizaciones | SERVITOTALES S.A.C."
   description="Solicita cotización técnica de maquinaria pesada, lotes de EPP o suministros de ferretería. Atención inmediata y entrega en obra en todo el Perú."
 >
-  <!-- Header -->
-  <section class="relative py-16 lg:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+  <!-- Atmospheric Hero Header with Dedicated Image -->
+  <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
+    <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
+      <img
+        src="/images/hero-contacto.jpg"
+        alt="Centro de operaciones y despacho logístico Servitotales S.A.C."
+        loading="eager"
+        decoding="async"
+        class="w-full h-full object-cover opacity-40 contrast-115 saturate-110"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#050A14] via-[#050A14]/85 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#050A14] via-transparent to-transparent"></div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl space-y-4">
-        <span class="tech-label">06 // CONTACTO & MESA DE COTIZACIONES</span>
-        <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
+      <div class="max-w-3xl space-y-4" id="contacto-hero">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/20 border border-red-500/35 text-red-400 font-mono text-[11px] font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+          06 // CONTACTO & MESA DE COTIZACIONES
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight">
           Mesa de Cotizaciones Técnicas y Atención Directa
         </h1>
-        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-          Comunícate con nuestros ingenieros y asesores comerciales para evaluar disponibilidad de maquinaria pesada, lotes de EPP o abastecimiento corporativo.
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+          Comunícate con nuestros ingenieros y asesores comerciales para evaluar disponibilidad de maquinaria pesada, lotes de EPP o abastecimiento corporativo con entrega en obra.
         </p>
       </div>
     </div>
@@ -26,7 +41,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         <!-- Left Channels -->
-        <div class="lg:col-span-5 space-y-8">
+        <div class="lg:col-span-5 space-y-8" id="contact-channels">
           <div class="space-y-3">
             <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">
               Canales de Atención Prioritaria
@@ -91,7 +106,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Right Form -->
-        <div class="lg:col-span-7">
+        <div class="lg:col-span-7" id="contact-form-container">
           <div class="p-8 sm:p-12 rounded-3xl industrial-card shadow-2xl relative">
             <h3 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] mb-2 font-heading">
               Solicita tu Cotización Técnica Multidivisión
@@ -152,6 +167,34 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
+  import { gsap } from 'gsap';
+
+  // Hero Entrance
+  gsap.from('#contacto-hero > *', {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: 'power3.out'
+  });
+
+  gsap.from('#contact-channels > *', {
+    x: -30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: 'power2.out',
+    delay: 0.2
+  });
+
+  gsap.from('#contact-form-container', {
+    x: 30,
+    opacity: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    delay: 0.3
+  });
+
   const whatsappNumber = "51963895085";
   const form = document.getElementById('contact-page-form') as HTMLFormElement;
   const successMsg = document.getElementById('contact-success');

@@ -43,18 +43,19 @@ const supplyCategories = [
   <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
     <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
       <img
+        id="sum-hero-img"
         src="/images/division-suministros.jpg"
         alt="Ferretería industrial, suministros y mobiliario Servitotales"
         loading="eager"
         decoding="async"
-        class="w-full h-full object-cover opacity-45 contrast-115 saturate-110"
+        class="w-full h-full object-cover opacity-45 contrast-115 saturate-110 will-change-transform"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-[#050A14] via-[#050A14]/85 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-[#050A14] via-transparent to-transparent"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl space-y-4">
+      <div class="max-w-3xl space-y-4" id="sum-hero-content">
         <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
           <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
           05 // ABASTECIMIENTO INTEGRAL
@@ -73,7 +74,7 @@ const supplyCategories = [
   <section class="py-16 lg:py-24 border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
       {supplyCategories.map((cat) => (
-        <div class="space-y-8">
+        <div class="space-y-8 category-block">
           <div class="border-b border-[var(--border-subtle)] pb-4">
             <h2 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">{cat.title}</h2>
             <p class="text-sm text-[var(--text-secondary)] mt-1">{cat.description}</p>
@@ -81,7 +82,7 @@ const supplyCategories = [
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cat.items.map((item) => (
-              <div class="p-6 rounded-3xl industrial-card flex flex-col justify-between group">
+              <div class="item-card p-6 rounded-3xl industrial-card flex flex-col justify-between group">
                 <div class="space-y-3">
                   <span class="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase block">{item.type}</span>
                   <h3 class="text-base font-bold text-[var(--text-primary)] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{item.name}</h3>
@@ -106,3 +107,32 @@ const supplyCategories = [
     </div>
   </section>
 </Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('#sum-hero-content > *', {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: 'power3.out'
+  });
+
+  gsap.utils.toArray<HTMLElement>('.category-block').forEach((block) => {
+    gsap.from(block.querySelectorAll('.item-card'), {
+      scrollTrigger: {
+        trigger: block,
+        start: 'top 85%'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power2.out'
+    });
+  });
+</script>

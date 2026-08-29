@@ -6,16 +6,31 @@ import Layout from '../layouts/Layout.astro';
   title="Nosotros & Sistema de Gestión ISO 9001:2015 | SERVITOTALES S.A.C."
   description="Conoce la trayectoria, pilares de calidad ISO 9001:2015, misión, visión y alcance técnico de SERVITOTALES S.A.C. a nivel nacional."
 >
-  <!-- Hero Section -->
-  <section class="relative py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl space-y-4">
-        <span class="tech-label">02 // NOSOTROS & SGC ISO 9001:2015</span>
-        <h1 class="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading leading-tight">
+  <!-- Atmospheric Hero Section with Dedicated Image -->
+  <section class="relative py-20 lg:py-28 border-b border-slate-800/80 bg-[#050A14] overflow-hidden text-white">
+    <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
+      <img
+        src="/images/hero-nosotros.jpg"
+        alt="Equipo de ingeniería y gestión Servitotales S.A.C."
+        loading="eager"
+        decoding="async"
+        class="w-full h-full object-cover opacity-40 contrast-115 saturate-110"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#050A14] via-[#050A14]/85 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#050A14] via-transparent to-transparent"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl space-y-4" id="nosotros-hero">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/35 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          02 // NOSOTROS & SGC ISO 9001:2015
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-white font-heading leading-tight" id="nosotros-title">
           Liderazgo, Idoneidad Técnica y Compromiso con el País
         </h1>
-        <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-          Servicios Totales del Perú S.A.C. es un socio estratégico integral para los sectores más exigentes de minería, construcción e industria en el Perú.
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal" id="nosotros-desc">
+          Servicios Totales del Perú S.A.C. es un socio estratégico integral para los sectores más exigentes de minería, construcción e industria en todo el territorio nacional.
         </p>
       </div>
     </div>
@@ -25,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-20 lg:py-28 border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-6 space-y-6">
+        <div class="lg:col-span-6 space-y-6 gsap-fade-up">
           <div class="flex items-center gap-2 text-amber-500 font-mono text-xs font-bold">
             <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
             <span>CALIDAD CERTIFICADA INTERNACIONAL</span>
@@ -38,21 +53,21 @@ import Layout from '../layouts/Layout.astro';
           </p>
           <div class="space-y-3 pt-2">
             <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">✓</div>
               <p class="text-xs sm:text-sm text-[var(--text-primary)] font-semibold">Trazabilidad documental y certificados de calibración al día.</p>
             </div>
             <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">✓</div>
               <p class="text-xs sm:text-sm text-[var(--text-primary)] font-semibold">Mantenimiento riguroso con repuestos originales y técnicos homologados.</p>
             </div>
             <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">✓</div>
               <p class="text-xs sm:text-sm text-[var(--text-primary)] font-semibold">Auditorías periódicas de satisfacción y mejora continua.</p>
             </div>
           </div>
         </div>
 
-        <div class="lg:col-span-6">
+        <div class="lg:col-span-6 gsap-fade-up">
           <div class="p-8 sm:p-10 rounded-3xl industrial-card bg-gradient-to-br from-[var(--bg-surface)] to-[var(--bg-main)] shadow-xl space-y-6">
             <div class="text-5xl font-black text-amber-500 font-heading">ISO 9001:2015</div>
             <h3 class="text-xl font-bold text-[var(--text-primary)]">Alcance del Sistema de Gestión</h3>
@@ -69,11 +84,11 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Mision & Vision -->
+  <!-- Misión & Visión -->
   <section class="py-20 lg:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-8 sm:p-12 rounded-3xl industrial-card space-y-4">
+        <div class="p-8 sm:p-12 rounded-3xl industrial-card space-y-4 gsap-card">
           <span class="text-xs font-mono font-bold text-[#DC2626] uppercase">// NUESTRO PROPÓSITO</span>
           <h3 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Misión</h3>
           <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
@@ -81,7 +96,7 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </div>
 
-        <div class="p-8 sm:p-12 rounded-3xl industrial-card space-y-4">
+        <div class="p-8 sm:p-12 rounded-3xl industrial-card space-y-4 gsap-card">
           <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase">// HORIZONTE 2030</span>
           <h3 class="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading">Visión</h3>
           <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
@@ -92,3 +107,45 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 </Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero Entrance
+  gsap.from('#nosotros-hero > *', {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: 'power3.out'
+  });
+
+  // Section scroll triggers
+  gsap.utils.toArray<HTMLElement>('.gsap-fade-up').forEach((elem) => {
+    gsap.from(elem, {
+      scrollTrigger: {
+        trigger: elem,
+        start: 'top 85%'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    });
+  });
+
+  gsap.from('.gsap-card', {
+    scrollTrigger: {
+      trigger: '.gsap-card',
+      start: 'top 85%'
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power3.out'
+  });
+</script>
